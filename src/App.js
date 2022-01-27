@@ -2,7 +2,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Context/AuthProvider';
+import AdminRoute from './Pages/Authentication/AdminRoute/AdminRoute';
 import Login from './Pages/Authentication/Login/Login';
+import PrivateRoute from './Pages/Authentication/PrivateRoute/PrivateRoute';
 import Register from './Pages/Authentication/Register/Register';
 import AddAdmin from './Pages/Dashboard/Admin/AddAdmin/AddAdmin';
 import AddBlog from './Pages/Dashboard/Admin/AddBlog/AddBlog';
@@ -22,15 +24,15 @@ function App() {
             <Route path="/home" element={<Home></Home>}></Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/blogDetails/:blogId" element={<BlogDetails></BlogDetails>}></Route>
-            <Route path="/dashboard" element={<Dashboard />}>
-              <Route path={`/dashboard/addBlog`} element={<AddBlog/>}>
+            <Route path="/blogDetails/:blogId" element={<PrivateRoute> <BlogDetails/> </PrivateRoute> }></Route>
+            <Route path="/dashboard" element={<PrivateRoute>  <Dashboard /> </PrivateRoute>}>
+              <Route path={`/dashboard/addBlog`} element={<AdminRoute> <AddBlog/></AdminRoute>}>
               </Route>
-              <Route path={`/dashboard/addAdmin`} element={<AddAdmin /> }>
+              <Route path={`/dashboard/addAdmin`} element={<AdminRoute> <AddAdmin /> </AdminRoute>}>
               </Route>
-              <Route path={`/dashboard/manageBlogs`} element={<ManageBlogs /> }>
+              <Route path={`/dashboard/manageBlogs`} element={<AdminRoute><ManageBlogs /></AdminRoute>  }>
               </Route>
-              <Route path={`/dashboard/createBlog`} element={<CreateBlog /> }>
+              <Route path={`/dashboard/createBlog`} element={<PrivateRoute><CreateBlog /></PrivateRoute>  }>
               </Route>
             </Route>
           </Routes>

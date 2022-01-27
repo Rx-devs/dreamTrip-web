@@ -3,18 +3,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
-const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Blogs', href: '#', current: false },
-  { name: 'Login', href: '#', current: false },
-  { name: 'Register', href: '#', current: false },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function Example() {
+export default function Navigation() {
   const { user, logout } = useAuth();
   
   return (
@@ -73,13 +62,22 @@ export default function Example() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
-                    <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                      <span className="sr-only">Open user menu</span>
-                      <img
+                    <Menu.Button className="bg-white flex text-sm rounded-full border-2 divide-slate-800">
+                      {/* <span className="sr-only">Open user menu</span> */}
+                      {
+                        user.email && <img
                         className="h-8 w-8 rounded-full"
                         src={user.photoURL}
                         alt=""
                       />
+                      }
+                      {
+                        !user.email && <img
+                        className="h-8 w-8 rounded-full"
+                        src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                        alt=""
+                      />
+                      }
                     </Menu.Button>
                   </div>
                   {/* <Transition

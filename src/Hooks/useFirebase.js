@@ -9,7 +9,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [authError, setAuthError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
-    // const [admin, setAdmin] = useState(false);
+    const [admin, setAdmin] = useState(false);
     const auth = getAuth();
 
     // register new user
@@ -25,7 +25,7 @@ const useFirebase = () => {
                 setUser(newUser);
 
                 // save user to db 
-               // saveUserToDB(email, name, 'POST');
+               saveUserToDB(email, name, 'POST');
 
                 // send name to firebase
                 updateProfile(auth.currentUser, {
@@ -49,7 +49,7 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((user) => {
-                // navigate('/');
+                navigate('/');
                 setAuthError('');
             })
             .catch((error) => {
@@ -66,7 +66,7 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 // save to db
-                // saveUserToDB(user.email, user.displayName, 'PUT');
+                saveUserToDB(user.email, user.displayName, 'PUT');
                 setAuthError('');
                 const destination = location?.state?.from || '/';
                 navigate(destination);
@@ -92,26 +92,27 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth]);
 
-   /*  useEffect(() => {
-        fetch(`https://quiet-sierra-31697.herokuapp.com/users/${user.email}`)
+    useEffect(() => {
+        fetch(`https://polar-savannah-45678.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
-    }, [user.email]); */
+    }, [user.email]);
     
     // User Log Out
-    const logout  = () => {
+    const logout  = (navigate) => {
         setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful
+            navigate('/');
         })
             .catch((error) => { })
             .finally(() => setIsLoading(false));
     }
 
     // send user data to database
-    /* const saveUserToDB = (email, displayName, method) => {
+    const saveUserToDB = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch(`https://quiet-sierra-31697.herokuapp.com/users`, {
+        fetch(`https://polar-savannah-45678.herokuapp.com/users`, {
             method: method,
             headers: {
                 'content-type':'application/json'
@@ -119,9 +120,10 @@ const useFirebase = () => {
             body: JSON.stringify(user)  
         })
         .then()
-    } */
+    }
     
     return {
+        admin,
         user,
         registerUser,
         logInUser,
