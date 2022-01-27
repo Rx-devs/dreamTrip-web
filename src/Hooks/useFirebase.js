@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, getIdToken, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Pages/Authentication/Firebase/Firebase.init";
 
@@ -8,25 +8,24 @@ initializeFirebase();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [authError, setAuthError] = useState('');
-    const [loading, setLoading] = useState(true);
-    const [admin, setAdmin] = useState(false);
-    const [token, setToken] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+    // const [admin, setAdmin] = useState(false);
     const auth = getAuth();
 
     // register new user
     const registerUser = (email, password, name, navigate) => {
-        setLoading(true);
+        setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((user) => {
                 // registration successfull.
+                
                 setAuthError('');
-
                 // change displayName
                 const newUser = { email, displayName: name };
                 setUser(newUser);
 
                 // save user to db 
-                saveUserToDB(email, name, 'POST');
+               // saveUserToDB(email, name, 'POST');
 
                 // send name to firebase
                 updateProfile(auth.currentUser, {
@@ -42,33 +41,32 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(() => setLoading(false));
+            .finally(() => setIsLoading(false));
     }
 
     // logIn User 
     const logInUser = (email, password, location, navigate) => {
-        setLoading(true);
+        setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((user) => {
+                // navigate('/');
                 setAuthError('');
-                const destination = location?.state?.from || '/';
-                navigate(destination);
             })
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(()=> setLoading(false));
+            .finally(()=> setIsLoading(false));
     }
 
     // Google Sign In
     const signInWithGoogle = (location, navigate) => {
-        setLoading(true);
+        setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
                 // save to db
-                saveUserToDB(user.email, user.displayName, 'PUT');
+                // saveUserToDB(user.email, user.displayName, 'PUT');
                 setAuthError('');
                 const destination = location?.state?.from || '/';
                 navigate(destination);
@@ -76,7 +74,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(()=> setLoading(false));
+            .finally(()=> setIsLoading(false));
     }
 
     // Observe user state
@@ -84,40 +82,36 @@ const useFirebase = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                getIdToken(user)
-                    .then(idToken => {
-                        setToken(idToken);
-                })
             }
             else {
                 // user is signed out
                 setUser({});
             }
-            setLoading(false);
+            setIsLoading(false);
         });
         return () => unsubscribe;
     }, [auth]);
 
-    useEffect(() => {
-        fetch(`https://young-castle-89002.herokuapp.com/users/${user.email}`)
+   /*  useEffect(() => {
+        fetch(`https://quiet-sierra-31697.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
-    }, [user.email]);
+    }, [user.email]); */
     
     // User Log Out
-    const logOut = () => {
-        setLoading(true);
+    const logout  = () => {
+        setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful
         })
             .catch((error) => { })
-            .finally(() => setLoading(false));
+            .finally(() => setIsLoading(false));
     }
 
     // send user data to database
-    const saveUserToDB = (email, displayName, method) => {
+    /* const saveUserToDB = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch(`https://young-castle-89002.herokuapp.com/users`, {
+        fetch(`https://quiet-sierra-31697.herokuapp.com/users`, {
             method: method,
             headers: {
                 'content-type':'application/json'
@@ -125,16 +119,14 @@ const useFirebase = () => {
             body: JSON.stringify(user)  
         })
         .then()
-    }
+    } */
     return {
         user,
-        admin,
-        token,
         registerUser,
         logInUser,
         signInWithGoogle,
-        logOut,
-        loading,
+        logout ,
+        isLoading,
         authError
     }
 };

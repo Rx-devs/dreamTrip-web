@@ -1,6 +1,16 @@
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Fragment } from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { Fragment } from 'react';
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+
+// navlink styles
+const customStyle = {
+  textDecoration: "none", color: "#000000", display: "block", textTransform: "capitalize", fontSize: "16px"
+};
+const activeStyle = {
+  ...customStyle, color: 'red',
+};
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -14,8 +24,10 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const { user, logout } = useAuth();
+  
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -44,8 +56,20 @@ export default function Example() {
                     alt="Workflow"
                   />
                 </div>
+                
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
+                  {user.email ?
+                    <button style={{ textTransform: 'capitalize', color: '#ff3e30', fontSize: '16px' }} onClick={logout}>logout</button>
+                    :
+                    <NavLink
+                      to="/login"
+                      style={({ isActive }) =>
+                        isActive ? activeStyle : customStyle
+                      }>
+                      Login
+                    </NavLink>
+                  }
                     {navigation.map((item) => (
                       <a
                         key={item.name}
