@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "title": "Antibes",
     "category": "French Road Trip",
     "traveler_name": "Aileen Adalid",
@@ -9,7 +10,8 @@
     "travel_location": "France"
   },
   {
-    "title": "Creeping Phlox or “Rurikarakusa” (Nemophila Menziesii)",
+    "id": "2",
+    "title": "Rurikarakusa",
     "category": "Japan Trip",
     "traveler_name": "Aileen Adalid",
     "thumbnail_url": "https://i.ibb.co/VBTsD3Z/hitachi-seaside-park-blue-flower-field-ibaraki-spring-flowers-in-japan-rurikarakusa-phlox.jpg",
@@ -18,6 +20,7 @@
     "travel_location": "Japan"
   },
   {
+    "id": "3",
     "title": "Camogli",
     "category": "Italian Road Trip",
     "traveler_name": "Aileen Adalid",
@@ -27,6 +30,7 @@
     "travel_location": "Italy"
   },
   {
+    "id": "4",
     "title": "Cannes",
     "category": "French Road Trip",
     "traveler_name": "Aileen Adalid",
@@ -36,6 +40,7 @@
     "travel_location": "France"
   },
   {
+    "id": "5",
     "title": "Batangas & Local Hotels",
     "category": " Philippines Trip",
     "traveler_name": "Aileen Adalid",
@@ -45,6 +50,7 @@
     "travel_location": " Philippines"
   },
   {
+    "id": "6",
     "title": "Eze",
     "category": "French Road Trip",
     "traveler_name": "Aileen Adalid",
@@ -54,6 +60,7 @@
     "travel_location": "France"
   },
   {
+    "id": "7",
     "title": "Cinque Terre",
     "category": "Italian Road Trip",
     "traveler_name": "Aileen Adalid",
@@ -63,7 +70,8 @@
     "travel_location": "Italy"
   },
   {
-    "title": "Plum Blossom or “Ume” (Prunus Mume)",
+    "id": "8",
+    "title": "Plum Blossom or Ume",
     "category": "Japan Trip",
     "traveler_name": "Aileen Adalid",
     "thumbnail_url": "https://i.ibb.co/Dw3c2vQ/plum-blossom-ume-inabe-plum-grove-bairin-festival-matsuri-spring-flowers-in-japan.jpg",
@@ -72,6 +80,7 @@
     "travel_location": "Japan"
   },
   {
+    "id": "9",
     "title": "Villefranche-sur-Mer",
     "category": "French Road Trip",
     "traveler_name": "Aileen Adalid",
@@ -81,6 +90,7 @@
     "travel_location": "France"
   },
   {
+    "id": "10",
     "title": "Sanremo",
     "category": "Italian Road Trip",
     "traveler_name": "Aileen Adalid",
@@ -90,6 +100,7 @@
     "travel_location": "Italy"
   },
   {
+    "id": "11",
     "title": "Huma Island in Palawan",
     "category": " Philippines Trip",
     "traveler_name": "Aileen Adalid",
@@ -99,6 +110,7 @@
     "travel_location": "Philippines"
   },
   {
+    "id": "12",
     "title": "Portofino",
     "category": "Italian Road Trip",
     "traveler_name": "Aileen Adalid",
@@ -108,7 +120,8 @@
     "travel_location": "Italy"
   },
   {
-    "title": " Moss Phlox / Pink Moss or “Shibazakura” (Phlox Subulata)",
+    "id": "13",
+    "title": " Moss Phlox or Pink Moss",
     "category": "Japan Trip",
     "traveler_name": "Aileen Adalid",
     "thumbnail_url": "https://i.ibb.co/M8DFpzK/hitsujiyama-park-shibazakura-festival-chichibu-tokyo-pink-moss-spring-flowers-japan-fuji.jpg",
@@ -117,7 +130,8 @@
     "travel_location": "Japan"
   },
   {
-    "title": "Cherry Blossom or “Sakura” (Prunus Serrulata)",
+    "id": "14",
+    "title": "Cherry Blossom or Sakura",
     "category": "Japan Trip",
     "traveler_name": "Aileen Adalid",
     "thumbnail_url": "https://i.ibb.co/NxTTF1t/himeji-castle-kyoto-best-cherry-blossom-spots-sakura-japan-hyogo-hanami.jpg",

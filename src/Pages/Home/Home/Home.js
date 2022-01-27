@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "../../../Shared/Navigation/Navigation";
-import Blogs from "../Blogs/Blogs";
+import Blogs from "../Blogs/Blogs/Blogs";
 import TopBanner from "../TopBanner/TopBanner";
 const Home = () => {
     return (
