@@ -34,7 +34,7 @@ const AddAdmin = () => {
             <form onSubmit={handleAdminSubmit} class="space-y-6">
                 <div class="text-left">
                     <label class="text-gray-700" for="username">Email Address</label>
-                    <input onBlur={handleOnBlur} id="email" type="email" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-500 rounded-md  dark:text-gray-300  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"/>
+                    <input onBlur={handleOnBlur} id="email" type="email" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-500 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring"/>
                 </div>
             <div class="flex justify-start mt-6">
                 <button type="submit" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Add Admin</button>
