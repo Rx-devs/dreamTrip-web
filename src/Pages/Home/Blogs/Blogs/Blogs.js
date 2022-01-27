@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     useEffect(() => {
-        fetch('./blogs.json')
+        fetch('https://polar-savannah-45678.herokuapp.com/allblogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
         
     }, []);
     return (
         <div>
-            <div  className="md:container md:mx-auto">
+            <div className="md:container md:mx-auto">
                 <div className="bg-gray-100">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="max-w-2xl mx-auto py-16 sm:py-16 lg:py-20 lg:max-w-none">
@@ -28,7 +28,7 @@ const Blogs = () => {
 													<p  className="font-normal text-gray-500 mb-2">{blog.description.slice(0,200)}...</p>
 											</div>
 											<div  className="px-5 flex items-center flex-wrap pb-4 mb-2 border-b-2 border-gray-100 mt-auto w-full">
-												  <Link to={`/blogDetails/${blog.id}`}  className="text-indigo-500 inline-flex items-center">Learn More
+												  <Link to={`/blogDetails/${blog._id}`}  className="text-indigo-500 inline-flex items-center">Learn More
 													<svg  className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
 													  <path d="M5 12h14"></path>
 													  <path d="M12 5l7 7-7 7"></path>
