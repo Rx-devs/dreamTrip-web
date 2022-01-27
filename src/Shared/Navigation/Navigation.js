@@ -1,16 +1,7 @@
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Fragment } from 'react';
+import { Disclosure, Menu } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
-
-// navlink styles
-const customStyle = {
-  textDecoration: "none", color: "#000000", display: "block", textTransform: "capitalize", fontSize: "16px"
-};
-const activeStyle = {
-  ...customStyle, color: 'red',
-};
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -45,55 +36,39 @@ export default function Example() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
-                  />
+                <p class="text-2xl font-semibold">DREAMTrip</p>
                 </div>
                 
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
+                  <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                      to="/home">
+                      Home
+                    </NavLink>
+                    <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                      to="/dashboard">
+                      Dashboard
+                    </NavLink>
                   {user.email ?
-                    <button style={{ textTransform: 'capitalize', color: '#ff3e30', fontSize: '16px' }} onClick={logout}>logout</button>
+                    <button  className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white" onClick={logout}>logout</button>
                     :
-                    <NavLink
+                    <NavLink  className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
                       to="/login"
-                      style={({ isActive }) =>
-                        isActive ? activeStyle : customStyle
-                      }>
+                      >
                       Login
                     </NavLink>
-                  }
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                    }
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
+                {/* <button
                   type="button"
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </button> */}
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
@@ -102,12 +77,12 @@ export default function Example() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src={user.photoURL}
                         alt=""
                       />
                     </Menu.Button>
                   </div>
-                  <Transition
+                  {/* <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"
                     enterFrom="transform opacity-0 scale-95"
@@ -145,28 +120,31 @@ export default function Example() {
                         )}
                       </Menu.Item>
                     </Menu.Items>
-                  </Transition>
+                  </Transition> */}
                 </Menu>
               </div>
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
+            <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
+            <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                      to="/home">
+                      Home
+                    </NavLink>
+                    <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                      to="/dashboard">
+                      Dashboard
+                    </NavLink>
+                  {user.email ?
+                    <button  className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white" onClick={logout}>logout</button>
+                    :
+                    <NavLink  className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                      to="/login"
+                      >
+                      Login
+                    </NavLink>
+                    }
             </div>
           </Disclosure.Panel>
         </>
