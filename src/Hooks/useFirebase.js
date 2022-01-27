@@ -120,6 +120,7 @@ const useFirebase = () => {
         })
         .then()
     } */
+    
     return {
         user,
         registerUser,
