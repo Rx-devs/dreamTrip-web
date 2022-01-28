@@ -7,7 +7,7 @@ export default function Navigation() {
   const { user, logout } = useAuth();
   
   return (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav" className=" z-40 w-full absolute top-0 left-0">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

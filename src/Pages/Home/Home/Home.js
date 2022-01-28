@@ -5,7 +5,7 @@ import Blogs from "../Blogs/Blogs/Blogs";
 import TopBanner from "../TopBanner/TopBanner";
 const Home = () => {
     return (
-        <div>
+        <div class="relative z-0">
             <Navigation></Navigation>
             <TopBanner></TopBanner>
             <Blogs></Blogs>

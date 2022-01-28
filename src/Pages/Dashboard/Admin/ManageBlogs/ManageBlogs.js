@@ -5,7 +5,7 @@ const ManageBlogs = () => {
     useEffect(() => {
         fetch('https://polar-savannah-45678.herokuapp.com/allblogs')
             .then(res => res.json())
-            .then(data => setBlogs(data))
+            .then(data => setBlogs(data.allblogs))
     }, []);
 
     return (
