@@ -68,7 +68,7 @@ const Footer = () => {
                 <hr className="h-px my-6 bg-gray-300 border-none dark:bg-gray-700" />
 
                 <div>
-                    <p className="text-center text-gray-800  ">© DreamTrip 2022 - All rights reserved</p>
+                    <p className="text-center text-gray-800 font-medium ">© DreamTrip 2022 - All rights reserved</p>
                 </div>
             </div>
         </div>

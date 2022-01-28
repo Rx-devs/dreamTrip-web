@@ -32,12 +32,12 @@ const TopBanner = () => {
                     <div className="carousel-item active relative float-left w-full">
                         <img
                             src="https://i.ibb.co/ZXQzZyR/top-free-things-to-do-in-paris-france-tips-travel-guide-itinerary-europe.jpg"
-                            className="block w-full object-cover h-screen"
+                            className="block w-full h-screen"
                             alt="..."
                         />
-                        <div className="carousel-caption hidden md:block absolute text-center">
-                            <h5 className="text-3xl">France</h5>
-                            <p>Let's Explore the beauty of Paris</p>
+                        <div className="carousel-caption absolute text-center">
+                            <h5 className="text-4xl md:text-5xl mb-3 font-semibold">France</h5>
+                            <p className="text-md md:text-2xl font-base">Let's Explore the beauty of Paris</p>
                         </div>
                     </div>
                     <div className="carousel-item relative float-left w-full">
@@ -46,20 +46,20 @@ const TopBanner = () => {
                             className="block w-full object-cover h-screen"
                             alt="..."
                         />
-                        <div className="carousel-caption hidden md:block absolute text-center">
-                            <h5 className="text-xl">France</h5>
-                            <p>Let's explore the culture of Paris town.</p>
+                        <div className="carousel-caption absolute text-center">
+                            <h5 className="text-4xl md:text-5xl mb-3 font-semibold">Japan</h5>
+                            <p className="text-md md:text-2xl font-base">Let's explore the culture of Paris town.</p>
                         </div>
                     </div>
                     <div className="carousel-item relative float-left w-full">
                         <img
-                            src="https://i.ibb.co/L6yMJRd/seine-river-bank-cruise-paris-eiffel-tower-france-europe-bastille-day.jpg"
+                            src="https://i.ibb.co/jHT2qNh/cannes-cote-d-azur-french-riviera-road-trips-cities-towns-festival.jpg"
                             className="block w-full object-cover h-screen"
                             alt="..."
                         />
-                        <div className="carousel-caption hidden md:block absolute text-center">
-                            <h5 className="text-xl">France</h5>
-                            <p>Let's Explore the sea's in Paris.</p>
+                        <div className="carousel-caption absolute text-center">
+                            <h5 className="text-4xl md:text-5xl mb-3 font-semibold">Philipines</h5>
+                            <p className="text-md md:text-2xl font-base">Let's Explore the road trips cities and towns.</p>
                         </div>
                     </div>
                 </div>

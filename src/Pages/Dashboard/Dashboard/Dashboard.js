@@ -9,7 +9,7 @@ const Dashboard = () => {
             <div className="flex px-5 flex-col md:h-screen p-3 w-full md:w-80 bg-white text-gray-800 border-2">
                 <div className="space-y-3">
                     <div className="text-justify">
-                        <h2 className="font-medium text-2xl">Dashboard</h2>
+                        <h2 className="font-semibold text-2xl text-red-600">Dashboard</h2>
                         {/* <div className="inset-y-0 left-0 flex items-center">
                             <button class="p-2">
                                 <svg
