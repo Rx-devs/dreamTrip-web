@@ -7,7 +7,7 @@ export default function Navigation() {
   const { user, logout } = useAuth();
   
   return (
-    <Disclosure as="nav" className=" z-40 w-full absolute top-0 left-0">
+    <Disclosure as="nav" className="shadow-lg  z-40 w-full md:absolute top-0 left-0">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -25,7 +25,7 @@ export default function Navigation() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                <p class="text-2xl font-semibold">DREAMTrip</p>
+                <p className="text-2xl font-semibold">DREAMTrip</p>
                 </div>
                 
                 <div className="hidden sm:block sm:ml-6">

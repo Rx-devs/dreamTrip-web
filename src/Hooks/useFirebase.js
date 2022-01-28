@@ -99,11 +99,10 @@ const useFirebase = () => {
     }, [user.email]);
     
     // User Log Out
-    const logout  = (navigate) => {
+    const logout  = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful
-            navigate('/');
         })
             .catch((error) => { })
             .finally(() => setIsLoading(false));
