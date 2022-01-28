@@ -33,7 +33,7 @@ const Blogs = () => {
 							<TopBlogs></TopBlogs>
 						</div>
 						<div className="w-full py-16 sm:py-16 lg:py-20 lg:max-w-none">
-							<h2 className="text-2xl font-extrabold text-gray-900">Travel Blogs</h2>
+							<h2 className="text-3xl font-medium text-gray-900">All Blogs</h2>
 
 							<div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:gap-y-6">
 								{blogs.map((blog) => (

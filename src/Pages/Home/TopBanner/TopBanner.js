@@ -4,8 +4,8 @@ const TopBanner = () => {
     return (
         <div>
             <div id="carouselExampleCrossfade"
-  className="carousel slide carousel-fade relative h-screen"
-  data-bs-ride="carousel">
+                className="carousel slide carousel-fade relative h-screen"
+                data-bs-ride="carousel">
                 <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
                     <button
                         type="button"

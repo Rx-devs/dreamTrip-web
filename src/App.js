@@ -24,15 +24,15 @@ function App() {
             <Route path="/home" element={<Home></Home>}></Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/blogDetails/:blogId" element={<PrivateRoute> <BlogDetails/> </PrivateRoute> }></Route>
-            <Route path="/dashboard" element={<PrivateRoute>  <Dashboard /> </PrivateRoute>}>
-              <Route path={`/dashboard/addBlog`} element={<AdminRoute> <AddBlog/></AdminRoute>}>
+            <Route path="/blogDetails/:blogId" element={<PrivateRoute> <BlogDetails /> </PrivateRoute>}></Route>
+            <Route path="/dashboard" element={<PrivateRoute>  <Dashboard/> </PrivateRoute>}>
+              <Route path={`/dashboard/addBlog`} element={<AdminRoute> <AddBlog /></AdminRoute>}>
               </Route>
-              <Route path={`/dashboard/addAdmin`} element={<AdminRoute> <AddAdmin /> </AdminRoute>}>
+              <Route path={`/dashboard/addAdmin`} element={<AdminRoute> <AddAdmin/> </AdminRoute>}>
               </Route>
-              <Route path={`/dashboard/manageBlogs`} element={<AdminRoute><ManageBlogs /></AdminRoute>  }>
+              <Route path={`/dashboard/manageBlogs`} element={<AdminRoute><ManageBlogs/></AdminRoute>}>
               </Route>
-              <Route path={`/dashboard/createBlog`} element={<PrivateRoute><CreateBlog /></PrivateRoute>  }>
+              <Route path={`/dashboard/createBlog`} element={<PrivateRoute><CreateBlog/></PrivateRoute>}>
               </Route>
             </Route>
           </Routes>
@@ -40,6 +40,6 @@ function App() {
       </AuthProvider>
     </div>
   );
-}
+};
 
 export default App;

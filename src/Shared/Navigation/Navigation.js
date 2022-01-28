@@ -25,12 +25,12 @@ export default function Navigation() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                <p className="text-2xl font-semibold">DREAMTrip</p>
+                  <p className="text-2xl font-semibold">DREAMTrip</p>
                 </div>
                 
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                  <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                    <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
                       to="/home">
                       Home
                     </NavLink>
@@ -38,26 +38,19 @@ export default function Navigation() {
                       to="/dashboard">
                       Dashboard
                     </NavLink>
-                  {user.email ?
-                    <button  className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white" onClick={logout}>logout</button>
-                    :
-                    <NavLink  className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
-                      to="/login"
+                    {user.email ?
+                      <button className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white" onClick={logout}>logout</button>
+                      :
+                      <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                        to="/login"
                       >
-                      Login
-                    </NavLink>
+                        Login
+                      </NavLink>
                     }
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                {/* <button
-                  type="button"
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button> */}
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
@@ -66,59 +59,21 @@ export default function Navigation() {
                       {/* <span className="sr-only">Open user menu</span> */}
                       {
                         user.email && <img
-                        className="h-8 w-8 rounded-full"
-                        src={user.photoURL}
-                        alt=""
-                      />
+                          className="h-8 w-8 rounded-full"
+                          src={user.photoURL}
+                          alt=""
+                        />
                       }
                       {
                         !user.email && <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-                        alt=""
-                      />
+                          className="h-8 w-8 rounded-full"
+                          src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                          alt=""
+                        />
                       }
                     </Menu.Button>
                   </div>
-                  {/* <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a href="https://www.google.com/" className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')} >
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="https://www.google.com/"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="https://www.google.com/"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition> */}
+                  
                 </Menu>
               </div>
             </div>
@@ -126,27 +81,27 @@ export default function Navigation() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
-            <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
-                      to="/home">
-                      Home
-                    </NavLink>
-                    <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
-                      to="/dashboard">
-                      Dashboard
-                    </NavLink>
-                  {user.email ?
-                    <button  className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white" onClick={logout}>logout</button>
-                    :
-                    <NavLink  className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
-                      to="/login"
-                      >
-                      Login
-                    </NavLink>
-                    }
+              <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                to="/home">
+                Home
+              </NavLink>
+              <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                to="/dashboard">
+                Dashboard
+              </NavLink>
+              {user.email ?
+                <button className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white" onClick={logout}>logout</button>
+                :
+                <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+              }
             </div>
           </Disclosure.Panel>
         </>
       )}
     </Disclosure>
-  )
-}
+  );
+};

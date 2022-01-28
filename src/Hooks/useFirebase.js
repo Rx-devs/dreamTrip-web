@@ -25,7 +25,7 @@ const useFirebase = () => {
                 setUser(newUser);
 
                 // save user to db 
-               saveUserToDB(email, name, 'POST');
+                saveUserToDB(email, name, 'POST');
 
                 // send name to firebase
                 updateProfile(auth.currentUser, {
@@ -55,7 +55,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(()=> setIsLoading(false));
+            .finally(() => setIsLoading(false));
     }
 
     // Google Sign In
@@ -74,7 +74,7 @@ const useFirebase = () => {
             .catch((error) => {
                 setAuthError(error.message);
             })
-            .finally(()=> setIsLoading(false));
+            .finally(() => setIsLoading(false));
     }
 
     // Observe user state
@@ -99,7 +99,7 @@ const useFirebase = () => {
     }, [user.email]);
     
     // User Log Out
-    const logout  = () => {
+    const logout = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
             // Sign-out successful
@@ -114,11 +114,11 @@ const useFirebase = () => {
         fetch(`https://polar-savannah-45678.herokuapp.com/users`, {
             method: method,
             headers: {
-                'content-type':'application/json'
+                'content-type': 'application/json'
             },
-            body: JSON.stringify(user)  
+            body: JSON.stringify(user)
         })
-        .then()
+            .then()
     }
     
     return {
@@ -127,10 +127,10 @@ const useFirebase = () => {
         registerUser,
         logInUser,
         signInWithGoogle,
-        logout ,
+        logout,
         isLoading,
         authError
-    }
+    };
 };
 
 export default useFirebase;
