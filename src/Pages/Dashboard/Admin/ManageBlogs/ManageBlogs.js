@@ -6,13 +6,13 @@ const ManageBlogs = () => {
     const [control, setConrol] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allblogs')
+        fetch('https://polar-savannah-45678.herokuapp.com/allblogs')
             .then(res => res.json())
             .then(data => setBlogs(data.allblogs))
     }, [control]);
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/allblogs/${id}`, {
+        fetch(`https://polar-savannah-45678.herokuapp.com/allblogs/${id}`, {
           method: "DELETE",
           headers: { "content-type": "application/json" },
         })
