@@ -5,7 +5,7 @@ const TopBlogs = ({isLoading, setIsLoading}) => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allblogs`)
+        fetch(`https://dream-trip-app-server.herokuapp.com/allblogs`)
             .then(res => res.json())
 			.then(data => {
                 setBlogs(data.allblogs);

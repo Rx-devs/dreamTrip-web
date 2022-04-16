@@ -9,7 +9,7 @@ const CreateBlog = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/allblogs', {
+        fetch('https://dream-trip-app-server.herokuapp.com/allblogs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
