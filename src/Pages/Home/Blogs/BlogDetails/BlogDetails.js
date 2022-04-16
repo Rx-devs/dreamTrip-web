@@ -12,7 +12,7 @@ const BlogDetails = () => {
     
     // load blog
     useEffect(() => {
-        fetch(`https://polar-savannah-45678.herokuapp.com/allblogs/${blogId}`)
+        fetch(`http://localhost:5000/allblogs/${blogId}`)
             .then(res => res.json())
             .then(data => setBlog(data))
         

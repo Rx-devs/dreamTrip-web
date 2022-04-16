@@ -5,7 +5,7 @@ const TopBlogs = ({isLoading, setIsLoading}) => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch(`https://polar-savannah-45678.herokuapp.com/allblogs`)
+        fetch(`http://localhost:5000/allblogs`)
             .then(res => res.json())
 			.then(data => {
                 setBlogs(data.allblogs);

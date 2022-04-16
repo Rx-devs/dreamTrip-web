@@ -8,7 +8,7 @@ const AddBlog = () => {
     let navigate = useNavigate();
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('https://polar-savannah-45678.herokuapp.com/allblogs', {
+        fetch('http://localhost:5000/allblogs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
