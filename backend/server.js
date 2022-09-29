@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
+const colors = require('colors');
 const cors = require('cors');
-
+const connectDb = require('./config/db');
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // connect mongodb
+connectDb();
 
 const uri = `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASS}@cluster0.dn7ou.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -19,7 +21,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run() {
     try {
         await client.connect();
-        console.log('database connected');
+        // console.log('database connected');
         const database = client.db('dream_trip');
         const usersCollection = database.collection('users');
         const allBlogsCollection = database.collection('allblogs');
