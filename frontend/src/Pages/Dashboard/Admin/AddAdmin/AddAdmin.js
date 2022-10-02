@@ -12,7 +12,7 @@ const AddAdmin = () => {
     }
     const handleAdminSubmit = (e) => {
         const user = { email }
-        fetch('https://dream-trip-app-server.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/api/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

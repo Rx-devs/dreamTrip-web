@@ -21,18 +21,19 @@ const Blogs = () => {
 	const size = 10;
 
 
-    useEffect(() => {
-        fetch(`https://dream-trip-app-server.herokuapp.com/allblogs?page=${page}&&size=${size}`)
+	useEffect(() => {
+		setIsLoading(true);
+        fetch(`http://localhost:5000/api/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
 			.then(data => {
-				setBlogs(data.allblogs)
+				setBlogs(data.allblogs);
 				const count = data.count;
 				const pageNumber = Math.ceil(count / size);
 				setPageCount(pageNumber);
 				setIsLoading(false);
 			})
         
-	}, [page]);
+	}, [page,setIsLoading]);
 	return (
 		<div>
 			<div className="md:container md:mx-auto">
@@ -51,8 +52,8 @@ const Blogs = () => {
 								<div className="w-full py-16 sm:py-16 lg:py-20 lg:max-w-none">
 									<h2 className="text-3xl font-medium text-gray-900">All Blogs</h2>
 									<div className="mt-6 p-3 md:p-0 space-y-10 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-6 lg:gap-y-6">
-										{blogs.map((blog) => (
-											<div key={blog.title} className="group relative">
+										{blogs.map((blog,index) => (
+											<div key={index} className="group relative">
 												<div className="shadow-md border border-gray-200 rounded-lg">
 													<div className="relative w-full h-80 bg-white overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1 rounded-t-lg">
 														<img className="w-full h-full object-center object-cover" src={blog.thumbnail_url} alt="" />

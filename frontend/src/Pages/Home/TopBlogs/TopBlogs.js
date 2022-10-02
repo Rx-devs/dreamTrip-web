@@ -5,17 +5,19 @@ const TopBlogs = ({isLoading, setIsLoading}) => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch(`https://dream-trip-app-server.herokuapp.com/allblogs`)
+        setIsLoading(true);
+        fetch(`http://localhost:5000/api/blogs`)
             .then(res => res.json())
-			.then(data => {
+            .then(data => {
+                // console.log(data);
                 setBlogs(data.allblogs);
                 setIsLoading(false);
 			})
         
-    }, []);
+    }, [setIsLoading]);
 
-    const allBlogs = blogs.filter(blog => blog.user_rating > 4).slice(0,4);
-    console.log(allBlogs);
+    const allBlogs = blogs.filter(blog => blog.user_rating > 1).slice(0,4);
+    // console.log(allBlogs);
     
     return (
         <div className="w-full py-16 sm:py-16 lg:py-10 lg:max-w-none ">
@@ -25,8 +27,8 @@ const TopBlogs = ({isLoading, setIsLoading}) => {
                         <h2 className="text-3xl font-medium text-gray-900">Top Rated Spots</h2>
 
                         <div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-1 lg:gap-x-6 lg:gap-y-6">
-                            {allBlogs.map((blog) => (
-                                <div key={blog.title} className="group relative ">
+                            {allBlogs.map((blog,index) => (
+                                <div key={index} className="group relative ">
                                     <Link className="cursor-pointer" to={`/blogDetails/${blog._id}`}>
                                         <div className="shadow-md bg-white border border-gray-200 rounded-lg">
                                             <div className="relative w-full bg-white overflow-hidden group-hover:opacity-75 sm:h-50 rounded-t-lg">

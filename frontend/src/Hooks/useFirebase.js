@@ -92,11 +92,11 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [auth]);
 
-    useEffect(() => {
-        fetch(`https://dream-trip-app-server.herokuapp.com/users/${user.email}`)
+    /* useEffect(() => {
+        fetch(`http://localhost:5000/api/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
-    }, [user.email]);
+    }, [user.email]); */
     
     // User Log Out
     const logout = () => {
@@ -111,7 +111,7 @@ const useFirebase = () => {
     // send user data to database
     const saveUserToDB = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch(`https://dream-trip-app-server.herokuapp.com/users`, {
+        fetch(`http://localhost:5000/api/users`, {
             method: method,
             headers: {
                 'content-type': 'application/json'
