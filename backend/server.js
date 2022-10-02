@@ -1,20 +1,35 @@
 const express = require('express');
-const app = express();
 const colors = require('colors');
 const cors = require('cors');
 const connectDb = require('./config/db');
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 const { MongoClient } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
 const port = process.env.PORT || 5000;
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+const app = express();
+
+// connect database -> server -> route -> controller
 
 // connect mongodb
 connectDb();
 
+// middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use('/api/blogs', require('./routes/blogRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
+
+
+/* app.get('/api/blogs', (req, res) => {
+    // res.send('got blogs');
+    // res.json({ message: 'Get blogs' });
+    res.status(200).json({ message: 'get blogs' });
+}) */
+
+/* 
 const uri = `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASS}@cluster0.dn7ou.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -113,7 +128,7 @@ async function run() {
         // await client.close();
     };
 };
-run().catch(console.dir);
+run().catch(console.dir); */
 
 app.get('/', (req, res) => {
     res.send('Welcome to DreamTrip!')
