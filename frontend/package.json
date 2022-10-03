@@ -5,13 +5,14 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@headlessui/react": "^1.7.3",
-    "@heroicons/react": "^2.0.11",
+    "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "async": ">=3.2.4",
     "ejs": ">=3.1.8",
     "firebase": "^9.10.0",
+    "nth-check": ">=2.1.1",
     "protobufjs": ">=7.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,8 +22,7 @@
     "react-spinners": "^0.13.4",
     "sweetalert": "^2.1.2",
     "tw-elements": "^1.0.0-alpha9",
-    "web-vitals": "^3.0.2",
-	"nth-check": ">=2.1.1"
+    "web-vitals": "^3.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
