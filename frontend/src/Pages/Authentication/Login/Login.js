@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../../hooks/useAuth";
 import Footer from "../../../Shared/Footer/Footer";
 import Navigation from "../../../Shared/Navigation/Navigation";
 

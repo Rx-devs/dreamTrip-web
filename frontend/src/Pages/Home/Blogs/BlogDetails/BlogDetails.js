@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { useParams } from "react-router-dom";
-import useAuth from "../../../../Hooks/useAuth";
+import useAuth from "../../../../hooks/useAuth";
 import Footer from "../../../../Shared/Footer/Footer";
 import Navigation from "../../../../Shared/Navigation/Navigation";
 

@@ -1,18 +1,18 @@
 // import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import AuthProvider from './Context/AuthProvider';
-import AdminRoute from './Pages/Authentication/AdminRoute/AdminRoute';
-import Login from './Pages/Authentication/Login/Login';
-import PrivateRoute from './Pages/Authentication/PrivateRoute/PrivateRoute';
-import Register from './Pages/Authentication/Register/Register';
-import AddAdmin from './Pages/Dashboard/Admin/AddAdmin/AddAdmin';
-import AddBlog from './Pages/Dashboard/Admin/AddBlog/AddBlog';
-import ManageBlogs from './Pages/Dashboard/Admin/ManageBlogs/ManageBlogs';
-import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-import CreateBlog from './Pages/Dashboard/User/CreateBlog/CreateBlog';
-import BlogDetails from './Pages/Home/Blogs/BlogDetails/BlogDetails';
-import Home from './Pages/Home/Home/Home';
+import AuthProvider from './context/AuthProvider';
+import AdminRoute from './pages/Authentication/AdminRoute/AdminRoute';
+import Login from './pages/Authentication/Login/Login';
+import PrivateRoute from './pages/Authentication/PrivateRoute/PrivateRoute';
+import Register from './pages/Authentication/Register/Register';
+import AddAdmin from './pages/Dashboard/Admin/AddAdmin/AddAdmin';
+import AddBlog from './pages/Dashboard/Admin/AddBlog/AddBlog';
+import ManageBlogs from './pages/Dashboard/Admin/ManageBlogs/ManageBlogs';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import CreateBlog from './pages/Dashboard/User/CreateBlog/CreateBlog';
+import BlogDetails from './pages/Home/Blogs/BlogDetails/BlogDetails';
+import Home from './pages/Home/Home/Home';
 
 function App() {
   return (
