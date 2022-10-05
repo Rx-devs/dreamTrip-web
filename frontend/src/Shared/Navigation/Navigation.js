@@ -26,7 +26,7 @@ export default function Navigation() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <p className="text-2xl font-semibold"> <span className="text-red-600">DREAM</span>Trip</p>
+                    <span className="logo-font color-main">DREAMTrip</span>
                 </div>
                 
                 <div className="hidden sm:block sm:ml-6">
