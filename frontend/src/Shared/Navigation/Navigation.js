@@ -4,6 +4,16 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
+
+const navBtnStyles = [
+  'px-3', 'py-2', 'rounded-sm', 'text-l', 'font-semibold', 'nav-btn',
+  'hover:text-sky-700'
+];
+
+let activeStyle = {
+  color: `var(--dark)`
+}
+
 export default function Navigation() {
   const { user, logout } = useAuth();
   
@@ -30,19 +40,28 @@ export default function Navigation() {
                 </div>
                 
                 <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
-                    <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                  <div className="flex space-x-4 items-center">
+                    <NavLink
+                      style={({ isActive }) =>
+                    isActive ? activeStyle : undefined}
+                      className={navBtnStyles.join(" ")}
                       to="/home">
                       Home
                     </NavLink>
-                    <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                    <NavLink
+                      style={({ isActive }) =>
+                        isActive ? activeStyle : undefined}
+                        className={navBtnStyles.join(" ")}
                       to="/dashboard">
                       Dashboard
                     </NavLink>
                     {user.email ?
-                      <button className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white" onClick={logout}>logout</button>
+                      <button className="px-3 py-2 rounded-md text-l font-semibold nav-btn" onClick={logout}>logout</button>
                       :
-                      <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+                      <NavLink
+                      style={({ isActive }) =>
+                          isActive ? activeStyle : undefined}
+                        className={navBtnStyles.join(" ")}
                         to="/login"
                       >
                         Login
@@ -82,7 +101,7 @@ export default function Navigation() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
-              <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
+              <NavLink className="px-3 py-2 rounded-md text-l font-medium nav-btn"
                 to="/home">
                 Home
               </NavLink>
