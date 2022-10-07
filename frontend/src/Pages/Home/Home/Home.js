@@ -1,4 +1,5 @@
 import React from "react";
+import ChooseHoliday from "../../../components/ChooseHoliday/ChooseHoliday";
 import ScrollBtn from "../../../components/ScrollToTop/ScrollBtn";
 import SlidingBanner from "../../../components/Banner/SlidingBanner";
 import Footer from "../../../Shared/Footer/Footer";
@@ -10,6 +11,7 @@ const Home = () => {
         <div className="relative z-0">
             <Navigation/>
             <SlidingBanner/>
+            <ChooseHoliday/>
             <Blogs />
             <ScrollBtn/>
             <Footer />

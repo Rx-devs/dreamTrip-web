@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 
 const navBtnStyles = [
   'px-3', 'py-2', 'rounded-sm', 'text-l', 'font-semibold', 'nav-btn',
-  'hover:text-sky-700'
+  'hover:text-sky-700', 'text-black'
 ];
 
 let activeStyle = {
