@@ -81,11 +81,10 @@ code {
 }
 
 /*Navigation bar*/
-/*.navigation{
-filter: drop-shadow(0.4rem 0.4rem 0.45rem rgba(0, 0, 30, 0.5));
-
-}*/
-
+.nav-styles{
+	background-color: rgba(100%, 100%, 100%, 5%);
+	backdrop-filter: blur(50px);
+}
 
 /*Banner slider*/
 .slider-box{
