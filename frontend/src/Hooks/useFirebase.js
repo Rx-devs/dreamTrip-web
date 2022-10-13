@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, sendEmailVerification, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeFirebase from "../pages/Authentication/Firebase/Firebase.init";
 
@@ -9,9 +9,10 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [authError, setAuthError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
-    const [admin, setAdmin] = useState(false);
+    // const [admin, setAdmin] = useState(false);
     const auth = getAuth();
 
+    
     // register new user
     const registerUser = (email, password, name, navigate) => {
         setIsLoading(true);
@@ -20,7 +21,7 @@ const useFirebase = () => {
                 // console.log(user);
                 // console.log(user.user);
                 sendEmailVerification(user.user)
-                    .then(()=>{
+                    .then(() => {
                         // email verification sent
                     });
                 // registration successfull.
@@ -125,17 +126,35 @@ const useFirebase = () => {
             body: JSON.stringify(user)
         })
             .then()
-    }
-    
+    };
+
+    // Reset password
+    const resetPass = (email) => {
+        setIsLoading(true);
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // Password reset email sent!
+                // ..
+            })
+            .catch((error) => {
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                // ..
+            })
+            .finally(() => setIsLoading(false));
+            
+    };
+
     return {
-        admin,
+        // admin,
         user,
         registerUser,
         logInUser,
         signInWithGoogle,
         logout,
         isLoading,
-        authError
+        authError,
+        resetPass
     };
 };
 
