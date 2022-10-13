@@ -6,11 +6,24 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Footer from "../../../Shared/Footer/Footer";
 import Navigation from "../../../Shared/Navigation/Navigation";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [loginData, setLoginData] = useState({});
   const navigate = useNavigate();
   const { user, registerUser, isLoading, authError } = useAuth();
+
+  const notify = () => toast.success('A verfication email has been sent to your email, check inbox & spam box too !!', {
+    position: "bottom-left",
+    autoClose: 6000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
 
   const handleOnBlur = (e) => {
     const field = e.target.name;
@@ -25,16 +38,17 @@ const Register = () => {
       alert("Your password did not match");
       return;
     }
-    registerUser(loginData.email, loginData.password, loginData.name, navigate);
+    // console.log(e);
+    registerUser(loginData.email, loginData.password, loginData.name,navigate);
     e.preventDefault();
   };
 
   return (
     <div className="overflow-hidden">
       <Navigation></Navigation>
-      <div className="bg-white sm:bg-gray-200 min-h-screen w-screen flex flex-col justify-center items-center">
-        <div className="bg-white shadow-none sm:shadow-lg px-8 sm:px-12 w-full xs:w-full sm:w-6/12 md:w-5/12 lg:w-4/12 xl:w-2/6 h-screen sm:h-auto py-6">
-          <div className="text-left w-full text-gray-700 mb-4">
+      <div className="bg-white sm:bg-gray-200 py-20 w-screen flex flex-col justify-center items-center">
+        <div className="bg-white shadow-none sm:shadow-lg px-8 sm:px-12 w-full xs:w-full sm:w-6/12 md:w-5/12 lg:w-4/12 xl:w-2/6 h-screen sm:h-auto py-4">
+          <div className="text-left w-full text-gray-700 my-4">
           <p className="text-2xl font-semibold mb-2">Register Now!</p>
             <p>Join the DreamTrip community tody &amp; set up a free account.</p>
           </div>
@@ -77,23 +91,33 @@ const Register = () => {
               </div>
               <div className="w-full flex flex-col gap-2">
                 <button
+                  onClick={notify}
                   className="border border-indigo-500 hover:bg-indigo-500 hover:text-white duration-100 ease-in-out w-full text-indigo-500 py-4 flex flex-row justify-center items-center gap-1"
                   type="submit">
                   <FaRegEdit  className="h-5 w-5"/>
                   <span className="text-base font-semibold">Register</span>
                 </button>
-                <button className="border border-indigo-500 hover:bg-indigo-500 hover:text-white duration-100 ease-in-out w-6/12 text-indigo-500 p-2 flex flex-row justify-center items-center gap-1">
-                  <svg className="w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                  </svg>
-                  <Link style={{ textDecoration: "none", color: 'inherit' }} to="/login"> Login Here
-                  </Link>
-                </button>
+                <div className="text-center mt-4">
+                  <span>Have an account?</span>
+                  <Link className="text-indigo-500" to="/login"> Log in </Link>
+                </div>
               </div>
             </div>
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={6000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        />
       <Footer></Footer>
     </div>
   );

@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeFirebase from "../pages/Authentication/Firebase/Firebase.init";
 
@@ -17,6 +17,12 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((user) => {
+                // console.log(user);
+                // console.log(user.user);
+                sendEmailVerification(user.user)
+                    .then(()=>{
+                        // email verification sent
+                    });
                 // registration successfull.
                 
                 setAuthError('');
