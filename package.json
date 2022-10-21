@@ -7,9 +7,9 @@
     "start": "node backend/server.js",
     "server": "node backend/server.js",
     "client": "npm start --prefix frontend",
-	"client-install":"npm install --prefix frontend",
-	"dev": "concurrently \"npm run server\" \"npm run client\"",
-	"render-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
+    "client-install":"npm install --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "render-postbuild":"npm install --prefix frontend && npm run build --prefix frontend",
     "start-dev": "nodemon backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
