@@ -1,31 +1,60 @@
 {
-  "name": "dream-trip",
-  "version": "1.0.0",
-  "description": "Dream Trip App",
-  "main": "server.js",
-  "scripts": {
-    "start": "node backend/server.js",
-    "server": "node backend/server.js",
-    "client": "npm start --prefix frontend",
-    "client-install":"npm install --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "render-postbuild":"npm install --prefix frontend && npm run build --prefix frontend",
-    "start-dev": "nodemon backend/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Rxdevs",
-  "license": "ISC",
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "colors": "^1.4.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.2",
-    "express": "^4.18.1",
-    "express-async-handler": "^1.2.0",
-    "mongoose": "^6.6.2"
+    "@emotion/react": "^11.10.4",
+    "@headlessui/react": "^1.7.3",
+    "@heroicons/react": "^1.0.6",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "firebase": "^9.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.36.1",
+    "react-icons": "^4.4.0",
+    "react-rating": "^2.0.5",
+    "react-router-dom": "^6.4.1",
+    "react-spinners": "^0.13.4",
+    "react-toastify": "^9.0.8",
+    "sweetalert": "^2.1.2",
+    "tw-elements": "^1.0.0-alpha9",
+    "web-vitals": "^3.0.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "concurrently": "^7.4.0",
-    "nodemon": "^2.0.20"
+    "autoprefixer": "^10.4.12",
+    "minimatch": ">=3.0.5",
+    "postcss": "^8.4.17",
+    "react-scripts": "^5.0.1",
+    "tailwindcss": "^3.1.8",
+    "async": ">=3.2.4",
+    "ejs": ">=3.1.8",
+    "nth-check": ">=2.1.1",
+    "protobufjs": ">=7.1.2"
   }
 }
