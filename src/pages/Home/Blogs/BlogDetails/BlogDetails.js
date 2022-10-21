@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { useParams } from "react-router-dom";
-import useAuth from "../../../../hooks/useAuth";
+// import useAuth from "../../../../hooks/useAuth";
 import Footer from "../../../../Shared/Footer/Footer";
 import Navigation from "../../../../Shared/Navigation/Navigation";
 
 const BlogDetails = () => {
     const {blogId } = useParams();
-    const { user } = useAuth();
+    // const { user } = useAuth();
     const [blog, setBlog] = useState({});
     
     // load blog

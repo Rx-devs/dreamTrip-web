@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const Dashboard = () => {
-    const { logout, user, admin } = useAuth();
+    const { user, admin } = useAuth();
     return (
         <div className="flex-none md:flex flex-row">
             <div className="flex px-5 flex-col md:h-screen p-3 w-full md:w-80 bg-white text-gray-800 border-2">

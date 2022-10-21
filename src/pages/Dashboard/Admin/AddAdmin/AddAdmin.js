@@ -5,14 +5,14 @@ import swal from 'sweetalert';
 const AddAdmin = () => {
     let navigate = useNavigate();
     const [email, setEmail] = useState('');
-    const [success, setSuccess] = useState(false);
+    // const [success, setSuccess] = useState(false);
 
     const handleOnBlur = e => {
         setEmail(e.target.value);
     }
     const handleAdminSubmit = (e) => {
         const user = { email }
-        fetch('http://localhost:5000/api/users/admin', {
+        fetch('https://dream-trip-api.cyclic.app/api/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -22,7 +22,7 @@ const AddAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    setSuccess(true);
+                    // setSuccess(true);
                     setEmail('');
                     swal("Good job!", "Successfully added an Admin!", "success");
                     navigate("/home", { replace: true });
