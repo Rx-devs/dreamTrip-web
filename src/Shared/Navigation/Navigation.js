@@ -52,6 +52,13 @@ export default function Navigation() {
                       style={({ isActive }) =>
                         isActive ? activeStyle : undefined}
                       className={navBtnStyles.join(" ")}
+                      to="/gallery">
+                      Gallery
+                    </NavLink>
+                    <NavLink
+                      style={({ isActive }) =>
+                        isActive ? activeStyle : undefined}
+                      className={navBtnStyles.join(" ")}
                       to="/dashboard">
                       Dashboard
                     </NavLink>
@@ -104,6 +111,10 @@ export default function Navigation() {
               <NavLink className="px-3 py-2 rounded-md text-l font-medium nav-btn"
                 to="/home">
                 Home
+              </NavLink>
+              <NavLink className="px-3 py-2 rounded-md text-l font-medium nav-btn"
+                to="/gallery">
+                Gallery
               </NavLink>
               <NavLink className="px-3 py-2 rounded-md text-l font-medium hover:bg-gray-800 hover:text-white"
                 to="/dashboard">

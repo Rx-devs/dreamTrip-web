@@ -6,7 +6,7 @@ const TopBlogs = ({isLoading, setIsLoading}) => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`https://dream-trip-api.cyclic.app/api/blogs`)
+        fetch(`http://localhost:5000/api/blogs`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

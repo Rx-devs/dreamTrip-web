@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Gallery from './components/Gallery/Gallery';
 import AuthProvider from './context/AuthProvider';
 import AdminRoute from './pages/Authentication/AdminRoute/AdminRoute';
 import Login from './pages/Authentication/Login/Login';
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/home" element={<Home></Home>}></Route>
+            <Route path="/gallery" element={<Gallery/>}></Route>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/blogDetails/:blogId" element={<PrivateRoute> <BlogDetails /> </PrivateRoute>}></Route>

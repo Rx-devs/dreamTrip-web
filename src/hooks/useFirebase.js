@@ -100,7 +100,7 @@ const useFirebase = () => {
     }, [auth]);
 
     /* useEffect(() => {
-        fetch(`https://dream-trip-api.cyclic.app/api/users/${user.email}`)
+        fetch(`http://localhost:5000/api/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email]); */
@@ -118,7 +118,7 @@ const useFirebase = () => {
     // send user data to database
     const saveUserToDB = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch(`https://dream-trip-api.cyclic.app/api/users`, {
+        fetch(`http://localhost:5000/api/users`, {
             method: method,
             headers: {
                 'content-type': 'application/json'
