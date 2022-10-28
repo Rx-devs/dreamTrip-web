@@ -13,6 +13,7 @@
   --light: #C6EFF9;
   --main: #0396A6;
   --secondary: #64C3ED;
+  --darkGray: #848484;
 }
 
 body {
@@ -22,10 +23,8 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* font-family: 'Andada Pro', serif;  */
-  /*font-family: 'Alegreya', serif;*/
-  font-family: 'Ubuntu', sans-serif;
 
+  font-family: 'Alegreya', sans-serif;
 
 }
 
@@ -36,7 +35,7 @@ code {
 
 /* Logo */
 .logo-font{
-  font-family: 'Concert One', cursive;
+  font-family: 'Alegreya', sans-serif;
   font-size: 30px;
 }
 
@@ -53,8 +52,12 @@ code {
 }
 .color-secondary{
   color: var(--secondary)
-
 }
+.color-dark-gray{
+  color:  var(--darkGray);
+}
+
+
 .bg-color-dark{
   background-color: var(--dark)
 }
@@ -68,6 +71,20 @@ code {
   background-color: var(--secondary)
 
 }
+
+
+/* input placeholder */
+input::placeholder {
+  color: var(--darkGray);
+  opacity: 1; /* Firefox */
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #848484;
+}
+input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #848484;
+}
+
 
 /*subtitle styles*/
 .subtitle{

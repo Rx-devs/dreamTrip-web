@@ -1,24 +1,26 @@
 import { Disclosure, Menu } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import React from 'react';
+import { AiOutlineUser } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 
 const navBtnStyles = [
-  'px-3', 'py-2', 'rounded-sm', 'text-l', 'font-semibold', 'nav-btn',
-  'hover:text-sky-700', 'text-black'
+  'px-3', 'py-2', 'rounded-sm', 'text-base', 'nav-btn',
+  'hover:text-black', 'text-white'
 ];
 
 let activeStyle = {
-  color: `var(--dark)`
+  // color: `var(--dark)`
+  color: `black`
 }
 
 export default function Navigation() {
   const { user, logout } = useAuth();
   
   return (
-    <Disclosure as="nav" className="nav-styles shadow-md z-40 w-full md:absolute top-0 left-0">
+    <Disclosure as="nav" className="nav-styles shadow-sm z-40 w-full md:absolute top-0 left-0">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -36,7 +38,7 @@ export default function Navigation() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <span className="logo-font color-main">DREAMTrip</span>
+                  <span className="logo-font text-white">DREAMTrip</span>
                 </div>
                 
                 <div className="hidden sm:block sm:ml-6">
@@ -92,11 +94,7 @@ export default function Navigation() {
                         />
                       }
                       {
-                        !user.email && <img
-                          className="h-8 w-8 rounded-full"
-                          src="https://mdbootstrap.com/img/new/avatars/2.jpg"
-                          alt=""
-                        />
+                        !user.email && <AiOutlineUser className="h-8 w-8 rounded-full p-1" />
                       }
                     </Menu.Button>
                   </div>

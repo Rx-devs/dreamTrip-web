@@ -10,10 +10,10 @@ const Home = () => {
     return (
         <div className="relative z-0">
             <Navigation />
-            <TopBanner/>
-            <ChooseHoliday/>
+            <TopBanner />
+            <ChooseHoliday />
             <Blogs />
-            <ScrollBtn/>
+            <ScrollBtn />
             <Footer />
         </div>
     );
