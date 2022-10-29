@@ -12,7 +12,7 @@ const AddAdmin = () => {
     }
     const handleAdminSubmit = (e) => {
         const user = { email }
-        fetch('http://localhost:5000/api/users/admin', {
+        fetch('https://dream-trip-api.cyclic.app/api/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

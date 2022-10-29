@@ -23,7 +23,7 @@ const Blogs = () => {
 
 	useEffect(() => {
 		setIsLoading(true);
-        fetch(`http://localhost:5000/api/blogs?page=${page}&&size=${size}`)
+        fetch(`https://dream-trip-api.cyclic.app/api/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
 			.then(data => {
 				setBlogs(data.allblogs);
