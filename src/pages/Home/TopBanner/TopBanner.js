@@ -20,7 +20,7 @@ const TopBanner = () => {
             opacity: [1, 1],
             children: (
               <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-8xl text-white font-thin">Hello World!</h1>
+                <h1 className="text-8xl text-white font-thin">Explore and travel!</h1>
               </div>
             ),
           },
