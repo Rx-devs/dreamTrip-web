@@ -7,13 +7,13 @@ import useAuth from '../../hooks/useAuth';
 
 
 const navBtnStyles = [
-  'px-3', 'py-2', 'rounded-sm', 'text-base', 'nav-btn',
-  'hover:text-black', 'text-white'
+  'px-4', 'py-2', 'rounded-sm', 'text-base', 'nav-btn', 'text-white','font-bold'
 ];
 
 let activeStyle = {
   // color: `var(--dark)`
-  color: `black`
+  color: '#0396A6',
+  background:'#fff',
 }
 
 export default function Navigation() {

@@ -5,14 +5,14 @@ const SearchTrip = () => {
 	return (
 		<div className="absolute bottom-0 translate-y-1/2 bg-transparent w-full">
 			<div className="w-3/4 mx-auto">
-				<form className="grid grid-cols-[1fr_1fr_1fr_180px] items-center bg-white" action="">
-					<div className="py-5 flex items-center justify-center gap-2">
+				<form className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_180px] items-center bg-white" action="">
+					<div className="py-5 flex items-center gap-2 px-5">
 						<MdOutlinePlace className="w-6 h-6 color-dark-gray" />
 						<input className="outline-none color-dark-gray" type="text" id="placeName" name="placeName" placeholder="Where to?" />
 					</div>
-					<div className="py-5 flex items-center justify-center gap-2 relative">
-						<MdDateRange className="absolute left-0 color-dark-gray w-5 h-5" />
-						<select className="outline-none appearance-none color-dark-gray px-6 py-2 w-full cursor-pointer" name="month" id="month">
+					<div className="py-5 flex items-center gap-2 relative px-5">
+						<MdDateRange className="absolute left-6 color-dark-gray w-5 h-5" />
+						<select className="outline-none appearance-none color-dark-gray pl-8 pr-6 py-2 w-full cursor-pointer" name="month" id="month">
 							<option className="" value="">
 								Month
 							</option>
@@ -22,9 +22,9 @@ const SearchTrip = () => {
 							<option value="april">April</option>
 						</select>
 					</div>
-					<div className="py-5 flex items-center gap-2 relative">
-						<BsPinFill className="absolute left-0 color-dark-gray w-5 h-5" />
-						<select className="outline-none appearance-none color-dark-gray w-full px-6 py-2 cursor-pointer" name="travel" id="travel">
+					<div className="py-5 flex items-center gap-2 relative px-5">
+						<BsPinFill className="absolute left-6 color-dark-gray w-5 h-5" />
+						<select className="outline-none appearance-none color-dark-gray w-full pl-8 pr-6 py-2 cursor-pointer" name="travel" id="travel">
 							<option className="" value="">
 								Travel Type
 							</option>
