@@ -5,8 +5,7 @@ import { HiOutlineLogin } from 'react-icons/hi';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ResetPassModal from '../../../components/ResetPassModal/ResetPassModal';
 import useAuth from "../../../hooks/useAuth";
-import Footer from "../../../Shared/Footer/Footer";
-import Navigation from "../../../Shared/Navigation/Navigation";
+import Layout from "../../../layouts/Layout";
 
 const Login = () => {
   const [userLoginData, setUserLoginData] = useState({});
@@ -48,8 +47,7 @@ const Login = () => {
 
   return (
     <div className="overflow-hidden">
-      <Navigation />
-      
+      <Layout>
       <div className="bg-white sm:bg-gray-200 py-20 w-screen flex flex-col justify-center items-center">
         <div className="relative bg-white shadow-none sm:shadow-lg px-8 sm:px-12 w-full xs:w-full sm:w-6/12 md:w-5/12 lg:w-4/12 xl:w-2/6 h-screen sm:h-auto py-4">
           <div ref={modalRef} className="mt-10 absolute z-10 top-0 left-0 mx-6 hidden">
@@ -129,7 +127,7 @@ const Login = () => {
           
         </div>
       </div>
-      <Footer></Footer>
+      </Layout>
     </div>
   );
 };

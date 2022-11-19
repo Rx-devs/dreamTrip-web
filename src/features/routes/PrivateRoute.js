@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
-import useAuth from "../../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 
 const override = css`
   display: block;

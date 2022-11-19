@@ -6,8 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from "../../../hooks/useAuth";
-import Footer from "../../../Shared/Footer/Footer";
-import Navigation from "../../../Shared/Navigation/Navigation";
+import Layout from "../../../layouts/Layout";
 
 const Register = () => {
   const [loginData, setLoginData] = useState({});
@@ -54,7 +53,7 @@ const Register = () => {
 
   return (
     <div className="overflow-hidden">
-      <Navigation></Navigation>
+      <Layout>
       <div className="bg-white sm:bg-gray-200 py-20 w-screen flex flex-col justify-center items-center">
         <div className="bg-white shadow-none sm:shadow-lg px-8 sm:px-12 w-full xs:w-full sm:w-6/12 md:w-5/12 lg:w-4/12 xl:w-2/6 h-screen sm:h-auto py-4">
           <div className="text-left w-full text-gray-700 my-4">
@@ -128,7 +127,7 @@ const Register = () => {
         pauseOnHover
         theme="light"
       />
-      <Footer></Footer>
+      </Layout>
     </div>
   );
 };

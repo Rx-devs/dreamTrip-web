@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { useParams } from "react-router-dom";
+import Layout from "../../../layouts/Layout";
 // import useAuth from "../../../../hooks/useAuth";
-import Footer from "../../../../Shared/Footer/Footer";
-import Navigation from "../../../../Shared/Navigation/Navigation";
 
 const BlogDetails = () => {
     const {blogId } = useParams();
@@ -19,7 +18,7 @@ const BlogDetails = () => {
     }, [blogId]);
     return (
         <div>
-            <Navigation></Navigation>
+            <Layout>
             <div className="container px-12 md:px-6 py-10 md:py-20 mx-auto">
                 <div className="flex flex-wrap">
                     <div className="relative w-full mx-auto bg-white overflow-hidden sm:aspect-w-2 sm:aspect-h-1 sm:h-80 lg:aspect-w-1 lg:aspect-h-1 rounded-lg">
@@ -59,7 +58,7 @@ const BlogDetails = () => {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
+            </Layout>
         </div>
     );
 };

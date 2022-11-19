@@ -4,17 +4,17 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import './App.css';
 import Gallery from './components/Gallery/Gallery';
 import AuthProvider from './context/AuthProvider';
-import AdminRoute from './pages/Authentication/AdminRoute/AdminRoute';
+import AdminRoute from './features/routes/AdminRoute';
+import PrivateRoute from './features/routes/PrivateRoute';
 import Login from './pages/Authentication/Login/Login';
-import PrivateRoute from './pages/Authentication/PrivateRoute/PrivateRoute';
 import Register from './pages/Authentication/Register/Register';
+import BlogDetails from './pages/Blogs/BlogDetails/BlogDetails';
 import AddAdmin from './pages/Dashboard/Admin/AddAdmin/AddAdmin';
 import AddBlog from './pages/Dashboard/Admin/AddBlog/AddBlog';
 import ManageBlogs from './pages/Dashboard/Admin/ManageBlogs/ManageBlogs';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import CreateBlog from './pages/Dashboard/User/CreateBlog/CreateBlog';
-import BlogDetails from './pages/Home/Blogs/BlogDetails/BlogDetails';
-import Home from './pages/Home/Home/Home';
+import Home from './pages/Home/Home';
 
 function App() {
   return (

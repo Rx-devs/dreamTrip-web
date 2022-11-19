@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
-import TopBlogs from "../../TopBlogs/TopBlogs";
+import TopBlogs from "../../../components/TopBlogs/TopBlogs";
 import './Blogs.css';
 
 const override = css`

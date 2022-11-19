@@ -99,8 +99,9 @@ input::-ms-input-placeholder { /* Microsoft Edge */
 
 /*Navigation bar*/
 .nav-styles{
-	background-color: rgba(100%, 100%, 100%, 5%);
-	backdrop-filter: blur(50px);
+  background-color: var(--main)
+	/* background-color: rgba(100%, 100%, 100%, 5%); */
+	/* backdrop-filter: blur(50px); */
 }
 
 
