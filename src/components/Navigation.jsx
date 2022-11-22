@@ -7,13 +7,9 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 
-const navBtnStyles = [
-  'px-4', 'py-2', 'rounded-sm', 'text-base', 'text-white'
-];
-
 let activeStyle = {
   fontWeight:'500',
-  textDecoration: 'underline'
+  borderBottom: '3px solid white'
 }
 let activeStyle2 = {
   fontWeight:'500',
@@ -25,7 +21,7 @@ export default function Navigation() {
   const { user, logout } = useAuth();
 
   return (
-    <Disclosure as="nav" className="nav-styles shadow-sm z-40 w-full md:absolute top-0 left-0">
+    <Disclosure as="nav" className="nav-styles shadow-sm z-40 w-full md:absolute top-0 left-0 relative">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -51,14 +47,17 @@ export default function Navigation() {
                   <div className="flex space-x-1 items-center">
                   {
                     navItems.map((item,index)=>(
+                      <div
+                        className="px-3 py-2 text-white"
+                        key={index}>
                       <NavLink
-                        key={index}
                         style={({ isActive }) =>
                           isActive ? activeStyle : undefined}
-                        className={navBtnStyles.join(" ")}
+                        className="text-base text-white"
                         to={item.path}>
                         {item.name}
                       </NavLink>
+                      </div>
                     ))
                   }
                   </div>
@@ -71,11 +70,13 @@ export default function Navigation() {
                   <Menu as="div" className="ml-3 relative">
                     <div>
                       <Menu.Button className="bg-white rounded-full p-1">
-                      <img
-                            className="rounded-full w-7 h-7"
-                            src={user.photoURL}
-                            alt=""
-                          />
+                      {user.photoURL ? (
+                        <img
+                              className="rounded-full w-7 h-7"
+                              src={user.photoURL}
+                              alt=""
+                            />
+                      ) : <AiOutlineUser className="h-8 w-8 rounded-full p-1 bg-white block" />}
                       </Menu.Button>
                     </div>
                     <Transition
@@ -87,10 +88,19 @@ export default function Navigation() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="flex flex-col px-5 py-4 gap-3 text-black absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Item>
+                      {({ active }) => (
+                        <NavLink
+                          className="font-semibold block text-center"
+                          to="/dashboard">
+                          Dashboard
+                        </NavLink>
+                      )}
+                    </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <button className="px-3 py-2 rounded-sm text-l color-main font-semibold nav-btn" onClick={logout}>logout</button>
+                          <button className="font-semibold block bg-white p-0" onClick={logout}>Logout</button>
                         )}
                       </Menu.Item>
                     </Menu.Items>
@@ -123,14 +133,14 @@ export default function Navigation() {
             leaveTo="transform scale-95 opacity-0">
 
            {/* Small screen Navigation */}
-          <Disclosure.Panel static className="block md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
+          <Disclosure.Panel static className="block md:hidden absolute top-0 left-0 w-full bg-color-main">
+            <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col  text-white">
             {navItems.map((item,index)=>(
               <NavLink
                 key={index}
                 style={({ isActive }) =>
                   isActive ? activeStyle2 : undefined}
-                className={navBtnStyles.join(" ")}
+                className="text-base text-white mx-2 rounded px-4 py-3"
                 to={item.path}>
                 {item.name}
               </NavLink>
@@ -139,7 +149,7 @@ export default function Navigation() {
               <NavLink
                 style={({ isActive }) =>
                   isActive ? activeStyle2 : undefined}
-                className={navBtnStyles.join(" ")}
+                className="text-base text-white mx-2 rounded px-4 py-3"
                 to="/login">
                 Join Now
               </NavLink>
@@ -159,8 +169,5 @@ const navItems = [
   { name: 'Destinations', path:'/destinations'},
   { name: 'Blogs', path:'/blogs'},
   { name: 'About', path:'/about'},
-  // { name: 'Login', path:'/login'},
-  // { name: 'Register', path:'/register'},
-  // { name: 'Dashboard', path:'/dashboard'},
   // { name: '', path:'/'},
 ]

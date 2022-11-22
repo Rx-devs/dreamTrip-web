@@ -78,6 +78,9 @@ video {
 a{
   text-decoration: none;
 }
+a:focus,a:active,a:link,a:visited{
+  color: inherit;
+}
 input,select,button{
   border: none;
 }
