@@ -21,7 +21,7 @@ export default function Navigation() {
   const { user, logout } = useAuth();
 
   return (
-    <Disclosure as="nav" className="nav-styles shadow-sm z-40 w-full md:absolute top-0 left-0 relative">
+    <Disclosure as="nav" className="nav-styles shadow-sm z-40 w-full md:absolute top-0 left-0 relative sticky">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -39,8 +39,8 @@ export default function Navigation() {
               </div>
               <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
                 {/*  navbar brand */}
-                <div className="flex-shrink-0 flex items-center">
-                  <span className="logo-font text-white">DREAMTrip</span>
+                <div className="flex-shrink-0 flex items-center text-white">
+                  <NavLink to="/home" className="text-2xl md:text-3xl font-semibold">DREAMTrip</NavLink>
                 </div>
                   {/*  Large screen Navigation */}
                 <div className="hidden md:block sm:ml-6">

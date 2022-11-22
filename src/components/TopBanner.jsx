@@ -2,10 +2,10 @@ import React from "react";
 import { ParallaxBanner } from 'react-scroll-parallax';
 import bgImg from '../assets/images/banner/bg.jpg';
 import SearchTrip from "./SearchTrip";
- 
+
 const TopBanner = () => {
   return (
-    <div className="relative mb-12">
+    <div className="relative mb-16">
       <ParallaxBanner
         layers={[
           {
@@ -19,13 +19,13 @@ const TopBanner = () => {
             speed: 15,
             opacity: [1, 1],
             children: (
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex h-5/6	md:h-auto items-center justify-center">
                 <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-thin">Explore and travel!</h1>
               </div>
             ),
           },
         ]}
-        className="aspect-[2/1] w-screen h-screen"
+        className="aspect-[2/1] w-screen banner-styles"
       />
       <SearchTrip />
     </div>

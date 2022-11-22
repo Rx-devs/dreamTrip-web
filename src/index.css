@@ -83,17 +83,17 @@ a:focus,a:active,a:link,a:visited{
 }
 input,select,button{
   border: none;
+  color: inherit;
 }
 a,button{
   cursor: pointer;
 }
-
-/* Logo */
-.logo-font{
-  font-family: 'Alegreya', sans-serif;
-  font-size: 30px;
+fieldset{
+  border: none !important;
 }
-
+input:focus{
+  background-color: "#fff"
+}
 
 /* AQUA */
 .color-dark{
@@ -140,6 +140,16 @@ input::-ms-input-placeholder { /* Microsoft Edge */
   color: #848484;
 }
 
+
+/* Banner */
+.banner-styles{
+  height: 80vh;
+}
+@media (min-width: 768px) {
+  .banner-styles{
+    height: 100vh;
+  }
+}
 
 /*subtitle styles*/
 .subtitle{

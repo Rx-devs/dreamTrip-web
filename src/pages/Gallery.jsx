@@ -27,9 +27,9 @@ const sliders = [
 const Gallery = () => {
 	return (
 			<div className="h-screen relative">
-				<h2 className='logo-font color-main font-semibold absolute top-5 z-10 left-1/3 lg:left-10'>
-					<NavLink to="/home">DreamTrip</NavLink>
-				</h2>
+				<div className='absolute top-5 z-10 w-full text-center md:text-start md:pl-6 color-main'>
+					<NavLink to="/home" className="text-3xl md:text-4xl font-semibold">DreamTrip</NavLink>
+				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 h-fit lg:h-full overflow-hidden">
 					{
 						sliders.map((slide, index) => (
