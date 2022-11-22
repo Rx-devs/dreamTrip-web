@@ -6,19 +6,19 @@ const TopBlogs = ({isLoading, setIsLoading}) => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch(`https://dream-trip-api.cyclic.app/api/blogs`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/blogs`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
                 setBlogs(data.allblogs);
                 setIsLoading(false);
 			})
-        
+
     }, [setIsLoading]);
 
     const allBlogs = blogs.filter(blog => blog.user_rating > 1).slice(0,4);
     // console.log(allBlogs);
-    
+
     return (
         <div className="w-full py-16 sm:py-16 lg:py-10 lg:max-w-none ">
             {
@@ -42,12 +42,12 @@ const TopBlogs = ({isLoading, setIsLoading}) => {
                                     </Link>
                                 </div>
                             ))}
-								
+
                         </div>
                     </div>
                 )
             }
-            
+
         </div>
     );
 };

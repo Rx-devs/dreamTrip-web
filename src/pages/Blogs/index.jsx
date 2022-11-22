@@ -16,7 +16,7 @@ const Blogs = () => {
 
 	useEffect(() => {
 		setIsLoading(true);
-        fetch(`https://dream-trip-api.cyclic.app/api/blogs?page=${page}&&size=${size}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
 			.then(data => {
 				setBlogs(data.allblogs);

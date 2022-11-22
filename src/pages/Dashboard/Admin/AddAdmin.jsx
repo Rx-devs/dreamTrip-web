@@ -11,7 +11,7 @@ const AddAdmin = () => {
     }
     const handleAdminSubmit = (e) => {
         const user = { email }
-        fetch('https://dream-trip-api.cyclic.app/api/users/admin', {
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/admin`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
