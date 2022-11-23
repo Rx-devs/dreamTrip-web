@@ -19,8 +19,8 @@ const TopBanner = () => {
             speed: 15,
             opacity: [1, 1],
             children: (
-              <div className="absolute inset-0 flex h-5/6	md:h-auto items-center justify-center">
-                <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-thin">Explore and travel!</h1>
+              <div className="absolute inset-0 flex h-5/6	md:h-auto items-center justify-center px-4 md:px-0 text-center">
+                <h1 className="text-5xl md:text-6xl lg:text-8xl text-white font-semibold lg:font-normal">Explore and travel!</h1>
               </div>
             ),
           },

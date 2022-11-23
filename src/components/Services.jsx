@@ -38,16 +38,16 @@ const servicesList = [
   {
     title:'Lot Of Choices',
     subTitle:'Total 400+ destinations that we work with.',
-    img:`${GlobeImg}`
+    img: GlobeImg
   },
   {
     title:'Best Tour Guide',
     subTitle:'Our tour guide with 15+ years of experience.',
-    img:`${TourImg}`
+    img: TourImg
   },
   {
     title:'Easy Booking',
     subTitle:'With an early and fast purchase process.',
-    img:`${BookingImg}`
+    img: BookingImg
   }
 ]
