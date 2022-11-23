@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout";
 import Blogs from "./Blogs";
 import Services from "../components/Services";
 import Experiences from "../components/Experiences";
+import CustomerSay from "../components/CustomerSay"
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Destinations />
             <Experiences/>
             <Blogs />
+            <CustomerSay/>
             <ScrollBtn />
           </Layout>
         </div>
