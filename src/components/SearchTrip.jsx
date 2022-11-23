@@ -26,7 +26,7 @@ const SearchTrip = () => {
 	const handleTypeChange = (event) => {
     setTravelType(event.target.value);
   };
-	console.log(month,travelType)
+	// console.log(month,travelType)
 	return (
 		<div className="absolute bottom-20 md:bottom-0 translate-y-1/2 bg-transparent w-full">
 			<div className="w-3/4 mx-auto">
