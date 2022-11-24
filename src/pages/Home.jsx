@@ -7,7 +7,7 @@ import Blogs from "./Blogs";
 import Services from "../components/Services";
 import Experiences from "../components/Experiences";
 import CustomerSay from "../components/CustomerSay"
-
+import GetStarted from "../components/GetStarted"
 const Home = () => {
     return (
         <div className="relative z-0">
@@ -18,6 +18,7 @@ const Home = () => {
             <Experiences/>
             <Blogs />
             <CustomerSay/>
+            <GetStarted/>
             <ScrollBtn />
           </Layout>
         </div>

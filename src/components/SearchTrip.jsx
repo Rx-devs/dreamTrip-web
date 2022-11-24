@@ -62,7 +62,7 @@ const SearchTrip = () => {
 										</MenuItem>
 								))}
 						</Select>
-						<MdDateRange className="absolute left-6 h-full color-dark-gray w-5 h-5" />
+						<MdDateRange className="absolute color-dark-gray w-5 h-5 -translate-y-1/2 -translate-x-1/2 top-1/2 left-8" />
 						</FormControl>
 					<FormControl fullWidth className="relative">
 					<Select
@@ -92,7 +92,7 @@ const SearchTrip = () => {
 									</MenuItem>
 							))}
 					</Select>
-					<BsPinFill className="absolute left-6 h-full color-dark-gray w-5 h-5" />
+					<BsPinFill className="absolute color-dark-gray w-5 h-5 -translate-y-1/2 -translate-x-1/2 top-1/2 left-8" />
 					</FormControl>
 					<input className="w-full py-7 bg-color-main text-white outline-none cursor-pointer rounded-sm" type="submit" value="Find Now" />
 				</form>
