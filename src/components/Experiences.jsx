@@ -8,8 +8,8 @@ const Experiences = () => {
         <img className="h-full object-fit mx-auto" src={tourEx} alt=""/>
       </div>
       <div className="text-center md:text-left space-y-5 px-6 py-2 my-auto">
-        <span className="subtitle text-xl">Our Experiences</span>
-        <h2 className="text-3xl font-semibold">With Our Experience <br/> We Will Serve You. </h2>
+        <span className="typography-caption text-xl">Our Experiences</span>
+        <h2 className="text-3xl font-semibold typography-heading">With Our Experience <br/> We Will Serve You. </h2>
         <p>Since we first opened we have always prioritized the convenience of our users by providing low prices and with a easy process. </p>
         <div className="flex justfiy-center md:justfiy-start space-x-0 md:space-x-6">
           {

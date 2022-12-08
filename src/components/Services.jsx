@@ -8,8 +8,8 @@ const Services = ({}) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_4fr] gap-10 container mx-auto py-10">
       <div className="space-y-3 px-5 md:pr-4 mx-auto text-center lg:text-left">
-        <span className="text-base subtitle">What We Serve</span>
-        <h2 className="text-3xl md:text-4xl font-semibold lg:leading-normal">Top Values For You</h2>
+        <span className="text-base typography-caption">What We Serve</span>
+        <h2 className="text-3xl md:text-4xl font-semibold lg:leading-normal typography-heading">Top Values For You</h2>
         <p>Try various types of benefits when using our services.</p>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-6">
@@ -17,7 +17,7 @@ const Services = ({}) => {
           servicesList.map((service,index)=>(
             <div key={index} className="space-y-3 text-center lg:text-left">
               <img className="mx-auto lg:mx-0" src={service?.img} alt="Tour Service"/>
-              <h3 className="text-xl font-semibold">{service.title}</h3>
+              <h3 className="text-xl font-semibold typography-title">{service.title}</h3>
               <p>{service.subTitle}</p>
             </div>
           ))

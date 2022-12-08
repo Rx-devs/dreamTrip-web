@@ -9,7 +9,7 @@ const Footer = () => {
                     <div className="w-full -mx-6 lg:w-2/5">
                         <div className="px-6">
                             <div className="text-left">
-                                <button className="text-xl font-bold text-gray-800   hover:text-gray-700 ">DreamTrip</button>
+                                <button className="text-xl font-bold text-gray-800 typography-logo hover:text-gray-700 ">DreamTrip</button>
                                 <p className="max-w-md mt-2 text-gray-500  ">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
                             </div>
                             <div className="flex mt-4 -mx-2">

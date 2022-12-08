@@ -1,4 +1,4 @@
-import React from "react";
+import { lazy, Suspense } from 'react';
 import Destinations from "../components/Destinations";
 import ScrollBtn from "../components/ScrollBtn";
 import TopBanner from "../components/TopBanner";
@@ -6,8 +6,11 @@ import Layout from "../layouts/Layout";
 import Blogs from "./Blogs";
 import Services from "../components/Services";
 import Experiences from "../components/Experiences";
-import CustomerSay from "../components/CustomerSay"
-import GetStarted from "../components/GetStarted"
+import CustomerSay from "../components/CustomerSay";
+import Preloader from '../components/Preloader';
+// import PopularBlogs from "../components/PopularBlogs";
+const PopularBlogs = lazy(() => import('../components/PopularBlogs'));
+
 const Home = () => {
     return (
         <div className="relative z-0">
@@ -16,9 +19,10 @@ const Home = () => {
             <Services/>
             <Destinations />
             <Experiences/>
-            <Blogs />
+            <Suspense fallback={<Preloader/>}>
+            <PopularBlogs />
+            </Suspense>
             <CustomerSay/>
-            <GetStarted/>
             <ScrollBtn />
           </Layout>
         </div>

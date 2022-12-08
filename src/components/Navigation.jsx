@@ -40,7 +40,7 @@ export default function Navigation() {
               <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
                 {/*  navbar brand */}
                 <div className="flex-shrink-0 flex items-center text-white">
-                  <NavLink to="/home" className="text-2xl md:text-3xl font-semibold">DREAMTrip</NavLink>
+                  <NavLink to="/home" className="text-2xl md:text-3xl font-semibold typography-logo">DREAMTrip</NavLink>
                 </div>
                   {/*  Large screen Navigation */}
                 <div className="hidden md:block sm:ml-6">

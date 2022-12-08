@@ -8,8 +8,8 @@ const CustomerSay = () => {
   return(
     <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto px-5">
       <div className="space-y-4 my-auto text-center md:text-left lg:text-center w-full lg:w-3/4 mx-auto md:px-3">
-        <span className="text-xl subtitle">What They Say</span>
-        <h2 className="text-3xl font-semibold">What Our Customer <br/> Say About us</h2>
+        <span className="text-xl typography-caption">What They Say</span>
+        <h2 className="text-3xl font-semibold typography-heading">What Our Customer <br/> Say About us</h2>
         <div className="px-5 md:px-0 lg:px-6">
           <Carousel showArrows={false} showIndicators={false} useKeyboardArrows={false} showThumbs={false} showStatus={false} infiniteLoop={true} autoPlay={true}>
                 {

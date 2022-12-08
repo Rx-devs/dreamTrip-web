@@ -3,10 +3,12 @@ import Navigation from "../components/Navigation";
 
 export default function Layout({ children}) {
     return (
-        <>
+      <div>
             <Navigation />
-            {children}
+            <div className="pt-16">
+              {children}
+            </div>
             <Footer />
-        </>
+        </div>
     )
 }

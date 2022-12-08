@@ -1,13 +1,15 @@
 [
     {
-       "title":"Rurikarakusa",
+        "_id":"1",
+        "title":"Rurikarakusa",
+        "sub_title": "Head to Japan's hidden gem and get the most out of this popular hotspot with this detailed Niigata Itinerary guide!",
         "category":"Japan Trip",
         "traveler_name":"Aileen Adalid",
         "thumbnail_url":"https://i.ibb.co/HBDTk95/ex-Content.jpg",
-        "description":"Rurikarakusa is a low-growing plant that has pretty baby blue flowers …",
+        "description": "Head to Japan's hidden gem and get the most out of this popular hotspot with this detailed Niigata Itinerary guide!",
         "travel_cost":"200",
         "travel_location":"Japan",
-        "user_rating":"4" 
+        "user_rating":"4"
     },
     {
         "title":"Cannes",
@@ -27,7 +29,7 @@
         "description":"Rurikarakusa is a low-growing plant that has pretty baby blue flowers …",
         "travel_cost":"200",
         "travel_location":"Japan",
-        "user_rating":"4" 
+        "user_rating":"4"
     },
     {
         "title":"Cannes",
@@ -47,7 +49,7 @@
         "description":"Rurikarakusa is a low-growing plant that has pretty baby blue flowers …",
         "travel_cost":"200",
         "travel_location":"Japan",
-        "user_rating":"4" 
+        "user_rating":"4"
     },
     {
         "title":"Cannes",
@@ -67,7 +69,7 @@
         "description":"Rurikarakusa is a low-growing plant that has pretty baby blue flowers …",
         "travel_cost":"200",
         "travel_location":"Japan",
-        "user_rating":"4" 
+        "user_rating":"4"
     },
     {
         "title":"Cannes",
@@ -87,7 +89,7 @@
         "description":"Rurikarakusa is a low-growing plant that has pretty baby blue flowers …",
         "travel_cost":"200",
         "travel_location":"Japan",
-        "user_rating":"4" 
+        "user_rating":"4"
     },
     {
         "title":"Cannes",
@@ -107,7 +109,7 @@
         "description":"Rurikarakusa is a low-growing plant that has pretty baby blue flowers …",
         "travel_cost":"200",
         "travel_location":"Japan",
-        "user_rating":"4" 
+        "user_rating":"4"
     },
     {
         "title":"Cannes",
