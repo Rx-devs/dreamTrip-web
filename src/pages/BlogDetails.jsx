@@ -24,7 +24,7 @@ const BlogDetails = () => {
 
               {
                   isSuccess && (
-                      <div className="container px-12 md:px-6 py-10 md:py-20 mx-auto">
+                      <div className="container px-12 md:px-6 py-2 md:py-4 mx-auto">
                         <div className="flex flex-wrap">
                           <div className="relative w-full mx-auto bg-white overflow-hidden sm:aspect-w-2 sm:aspect-h-1 sm:h-80 lg:aspect-w-1 lg:aspect-h-1 rounded-lg">
                             <img className="w-full h-full object-center object-cover" src={data.images.thumbnail} alt="" />
@@ -38,24 +38,23 @@ const BlogDetails = () => {
                             <div className="text-base article-text-color">
                               <div className="text-xl">{parse(`${data.description}`)}</div>
                             </div>
-                            <div className="flex justify-between items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
+                            {/* <div className="flex justify-between items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
                               <div className="text-gray-900 inline-flex items-center">Travel Cost: ....
                               </div>
                               <div> <span className="mr-2">User Rating:</span>
                               <Rating name="simple-controlled" defaultValue={5} precision={0.1} readOnly />
                             </div>
-                          </div>
-                          <div className="flex w-100 justify-between items-center">
+                          </div> */}
+                          <div className="flex mt-5 w-100 justify-between items-center">
                             <div className="inline-flex items-center">
-                              <img alt="blog" src="https://dummyimage.com/104x104" className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
+                              <img alt="blog" src={data.author.profile_img} className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center" />
                               <span className="flex-grow flex flex-col pl-4">
                                 <span className="title-font font-medium text-gray-900">{data.author.name}</span>
                                 <span className="text-gray-400 text-xs tracking-widest mt-0.5">A traveler</span>
                               </span>
                             </div>
-                            <div className="flex flex-col">
-                              <span className="font-semibold title-font text-gray-700">{data.published_at}</span>
-                              <span className="mt-1 text-gray-500 text-sm"> ... </span>
+                            <div className="">
+                              <span className="text-gray-700"> {data.published_at}</span>
                             </div>
                           </div>
                         </div>

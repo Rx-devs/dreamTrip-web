@@ -1,73 +1,181 @@
-import React from "react";
 import { FaFacebookSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
 
 const Footer = () => {
-    return (
-        <div>
-            <div className="container px-6 py-4 mx-auto">
-                <div className="lg:flex">
-                    <div className="w-full -mx-6 lg:w-2/5">
-                        <div className="px-6">
-                            <div className="text-left">
-                                <button className="text-xl font-bold text-gray-800 typography-logo hover:text-gray-700 ">DreamTrip</button>
-                                <p className="max-w-md mt-2 text-gray-500  ">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
-                            </div>
-                            <div className="flex mt-4 -mx-2">
-                                <button className="mx-2 text-gray-700  hover:text-gray-600 " aria-label="Linkden">
-                                    <FaLinkedin className="w-5 h-5"/>
-                                </button>
-
-                                <button className="mx-2 text-gray-700  hover:text-gray-600 " aria-label="Facebook">
-                                <FaFacebookSquare className="w-5 h-5"/>
-                                </button>
-
-                                <button className="mx-2 text-gray-700  hover:text-gray-600 " aria-label="Twitter">
-                                    <FaTwitterSquare className="w-5 h-5"/>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="mt-6 lg:mt-0 lg:flex-1">
-                        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
-                            <div>
-                                <h3 className="text-gray-700 uppercase  text-left ">About</h3>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">DreamTrip Dreams</button>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">Team Members</button>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">DestinyIsAll</button>
-                            </div>
-
-                            <div>
-                                <h3 className="text-gray-700 uppercase  text-left ">Blog</h3>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">Top Blogs</button>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">New Blogs</button>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">Upcoming Blogs</button>
-                            </div>
-
-                            <div>
-                                <h3 className="text-gray-700 uppercase text-left ">Services</h3>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">Road Trip</button>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">River Trip</button>
-                                <button className="block mt-2 text-sm text-gray-600   hover:underline">Mountain Hills</button>
-                            </div>
-
-                            <div>
-                                <h3 className="text-gray-700 uppercase ">Contact Us</h3>
-                                <span className="block mt-2 text-sm text-gray-600   hover:underline">+1 526 654 8965</span>
-                                <span className="block mt-2 text-sm text-gray-600   hover:underline">dreamTrip@email.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr className="h-px my-6 bg-gray-300 border-none dark:bg-gray-700" />
-
-                <div>
-                    <p className="text-center text-gray-800 font-medium ">© DreamTrip 2022 - All rights reserved</p>
-                </div>
+  return(
+    <footer aria-label="Site Footer">
+      <div
+        className="max-w-screen-xl px-4 py-8 mx-auto space-y-2 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 mb-4">
+          <div>
+            <div className="text-xl font-semibold">
+              DreamTrip
             </div>
-        </div>
-    );
-};
+            <p className="max-w-xs mt-4 text-gray-500">
+              Making the world a better place through constructing elegant hierarchies.
+            </p>
+            <ul className="flex gap-3 mt-8">
+              <li>
+                <a
+                  href="/"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="text-gray-500 transition hover:opacity-75">
+                  <span className="sr-only">Facebook</span>
+                  <FaFacebookSquare  className="w-6 h-6"/>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="text-gray-500 transition hover:opacity-75"
+                >
+                  <span className="sr-only">Twitter</span>
+                  <FaTwitterSquare  className="w-6 h-6"/>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="text-gray-500 transition hover:opacity-75"
+                >
+                  <span className="sr-only">LinkedIn</span>
+                  <FaLinkedin className="w-6 h-6"/>
+                </a>
+              </li>
+            </ul>
+          </div>
 
+          <div
+            className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4"
+          >
+            <div>
+              <p className="font-medium text-gray-900">Services</p>
+
+              <nav aria-label="Footer Navigation - Services" className="mt-6">
+                <ul className="space-y-4 text-sm">
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      1on1 Coaching
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Company Review
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Accounts Review
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      HR Consulting
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div>
+              <p className="font-medium text-gray-900">Company</p>
+
+              <nav aria-label="Footer Navigation - Company" className="mt-6">
+                <ul className="space-y-4 text-sm">
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      About
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Meet the Team
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Accounts Review
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div>
+              <p className="font-medium text-gray-900">Helpful Links</p>
+
+              <nav aria-label="Footer Navigation - Company" className="mt-6">
+                <ul className="space-y-4 text-sm">
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Contact
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      FAQs
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Live Chat
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div>
+              <p className="font-medium text-gray-900">Legal</p>
+
+              <nav aria-label="Footer Navigation - Legal" className="mt-6">
+                <ul className="space-y-4 text-sm">
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Accessibility
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Returns Policy
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Refund Policy
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" className="text-gray-500 transition hover:opacity-75">
+                      Hiring Statistics
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-base text-gray-500 text-center">
+            &copy; 2022 DreamTrip, Inc. All rights reserved.
+          </p>
+      </div>
+    </footer>
+
+  )
+};
 export default Footer;

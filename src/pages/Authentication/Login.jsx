@@ -14,7 +14,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const modalRef = React.useRef(null);
-  
+
   // handle input fields onBlur
   const handleOnBlur = e => {
     const field = e.target.name;
@@ -48,7 +48,7 @@ const Login = () => {
   return (
     <div className="overflow-hidden">
       <Layout>
-      <div className="bg-white sm:bg-gray-200 py-20 w-screen flex flex-col justify-center items-center">
+      <div className="bg-white sm:bg-gray-200 py-6 md:py-10 w-screen flex flex-col justify-center items-center">
         <div className="relative bg-white shadow-none sm:shadow-lg px-8 sm:px-12 w-full xs:w-full sm:w-6/12 md:w-5/12 lg:w-4/12 xl:w-2/6 h-screen sm:h-auto py-4">
           <div ref={modalRef} className="mt-10 absolute z-10 top-0 left-0 mx-6 hidden">
             <ResetPassModal removeModal={removeModal} />
@@ -124,7 +124,7 @@ const Login = () => {
               <Link className="text-indigo-500" to="/register"> Join here </Link>
             </div>
           </div>
-          
+
         </div>
       </div>
       </Layout>

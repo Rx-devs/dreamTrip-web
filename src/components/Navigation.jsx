@@ -48,7 +48,7 @@ export default function Navigation() {
                   {
                     navItems.map((item,index)=>(
                       <div
-                        className="px-3 py-2 text-white"
+                        className="px-2 py-2 text-white"
                         key={index}>
                       <NavLink
                         style={({ isActive }) =>
