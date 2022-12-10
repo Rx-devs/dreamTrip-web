@@ -13,7 +13,7 @@ const Register = () => {
   const navigate = useNavigate();
   // const { user, registerUser, isLoading, authError } = useAuth();
   const {registerUser} = useAuth();
-  
+
   function showToast(email, pass) {
     const notify = () => toast.success('A verfication email has been sent to your email, check inbox & spam box too !!', {
       position: "bottom-left",
@@ -46,7 +46,7 @@ const Register = () => {
       showToast();
     }
     // console.log(e);
-    
+
     registerUser(loginData.email, loginData.password, loginData.name, navigate);
     e.preventDefault();
   };
@@ -54,7 +54,7 @@ const Register = () => {
   return (
     <div className="overflow-hidden">
       <Layout>
-      <div className="bg-white sm:bg-gray-200 py-20 w-screen flex flex-col justify-center items-center">
+      <div className="bg-white sm:bg-gray-200 py-10 w-screen flex flex-col justify-center items-center">
         <div className="bg-white shadow-none sm:shadow-lg px-8 sm:px-12 w-full xs:w-full sm:w-6/12 md:w-5/12 lg:w-4/12 xl:w-2/6 h-screen sm:h-auto py-4">
           <div className="text-left w-full text-gray-700 my-4">
             <p className="text-2xl font-semibold mb-2">Register Now!</p>

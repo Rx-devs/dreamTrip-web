@@ -1,11 +1,13 @@
+import TopInfobar from '../components/TopInfobar';
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 
 export default function Layout({ children}) {
     return (
       <div>
+            <TopInfobar/>
             <Navigation />
-            <div className="pt-0 md:pt-12 lg:pt-16">
+            <div>
               {children}
             </div>
             <Footer />

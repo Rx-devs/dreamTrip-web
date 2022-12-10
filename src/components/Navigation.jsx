@@ -8,23 +8,22 @@ import useAuth from '../hooks/useAuth';
 
 
 let activeStyle = {
-  fontWeight:'500',
-  borderBottom: '3px solid white'
+  color:'#3fd0d4',
+  fontWeight: '600'
 }
 let activeStyle2 = {
-  fontWeight:'500',
   backgroundColor: 'white',
-  color: '#0396A6'
+  color: '#3fd0d4'
 }
 
 export default function Navigation() {
   const { user, logout } = useAuth();
 
   return (
-    <Disclosure as="nav" className="nav-styles shadow-sm z-40 w-full md:absolute top-0 left-0 relative sticky">
+    <Disclosure as="nav" className="nav-styles shadow-sm">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-1">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center block md:hidden">
                 {/* Mobile menu button*/}
@@ -39,21 +38,20 @@ export default function Navigation() {
               </div>
               <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
                 {/*  navbar brand */}
-                <div className="flex-shrink-0 flex items-center text-white">
-                  <NavLink to="/home" className="text-2xl md:text-3xl font-semibold typography-logo">DREAMTrip</NavLink>
+                <div className="flex-shrink-0 flex items-center ">
+                  <NavLink to="/home" className="text-2xl md:text-3xl font-semibold color-main">DREAMTrip</NavLink>
                 </div>
                   {/*  Large screen Navigation */}
-                <div className="hidden md:block sm:ml-6">
-                  <div className="flex space-x-1 items-center">
+                <div className="hidden md:block sm:ml-6 my-auto">
+                  <div className="flex space-x-10">
                   {
                     navItems.map((item,index)=>(
                       <div
-                        className="px-2 py-2 text-white"
                         key={index}>
                       <NavLink
                         style={({ isActive }) =>
                           isActive ? activeStyle : undefined}
-                        className="text-base text-white"
+                        className="font-medium"
                         to={item.path}>
                         {item.name}
                       </NavLink>
@@ -88,7 +86,7 @@ export default function Navigation() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="flex flex-col px-5 py-4 gap-3 text-black absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="flex flex-col px-5 py-4 gap-3  absolute right-0 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <Menu.Item>
                       {({ active }) => (
                         <NavLink
@@ -134,13 +132,13 @@ export default function Navigation() {
 
            {/* Small screen Navigation */}
           <Disclosure.Panel static className="block md:hidden absolute top-0 left-0 w-full bg-color-main">
-            <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col  text-white">
+            <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
             {navItems.map((item,index)=>(
               <NavLink
                 key={index}
                 style={({ isActive }) =>
                   isActive ? activeStyle2 : undefined}
-                className="text-base text-white mx-2 rounded px-4 py-3"
+                className="text-base mx-2 rounded px-4 py-3"
                 to={item.path}>
                 {item.name}
               </NavLink>
@@ -149,7 +147,7 @@ export default function Navigation() {
               <NavLink
                 style={({ isActive }) =>
                   isActive ? activeStyle2 : undefined}
-                className="text-base text-white mx-2 rounded px-4 py-3"
+                className="text-base mx-2 rounded px-4 py-3"
                 to="/login">
                 Join Now
               </NavLink>
