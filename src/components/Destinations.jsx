@@ -4,6 +4,7 @@ import img3 from '../assets/images/holidays/holiday_3.jpg';
 import img4 from '../assets/images/holidays/holiday_4.jpg';
 import Place from './Place';
 
+
 const Destinations = () => {
 	return (
 		<div className="py-12 container mx-auto text-center">
@@ -27,24 +28,28 @@ export default Destinations;
 
 const places = [
 	{
+		id: 1,
 		place_name:'Spain',
 		place_value: 700,
 		place_thumbnail: img1,
 		place_rating: 5,
 	},
 		{
+			id: 2,
 		place_name:'Spain',
 		place_value: 700,
 		place_thumbnail: img2,
 		place_rating: 5,
 	},
 		{
+			id: 3,
 		place_name:'Spain',
 		place_value: 700,
 		place_thumbnail: img3,
 		place_rating: 5,
 	},
 		{
+			id: 4,
 		place_name:'Spain',
 		place_value: 700,
 		place_thumbnail: img4,

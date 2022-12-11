@@ -12,6 +12,7 @@ const Register = lazy(() => import('./pages/Authentication/Register'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 const About = lazy(() => import('./pages/About'));
+const DestinationDetails = lazy(() => import('./pages/DestinationDetails'));
 const BlogDetails = lazy(() => import('./pages/BlogDetails'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const AddAdmin = lazy(() => import('./pages/Dashboard/Admin/AddAdmin'));
@@ -35,6 +36,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/blogDetails/:blogId" element={<BlogDetails />}></Route>
+              <Route path="/destinationDetails/:blogId" element={<DestinationDetails />}></Route>
               {/* <Route path="/blogDetails/:blogId" element={<PrivateRoute> <BlogDetails /> </PrivateRoute>}></Route> */}
               <Route path="/dashboard" element={<PrivateRoute>  <Dashboard /> </PrivateRoute>}>
                 <Route path={`/dashboard/addBlog`} element={<AdminRoute> <AddBlog /></AdminRoute>}>
