@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineHeart } from 'react-icons/ai';
 import { CgComment } from 'react-icons/cg';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Blog = ({blog}) => {
   const {blog_id, images, title, sub_title, author, published_at, reading_time} = blog;
@@ -8,7 +10,12 @@ const Blog = ({blog}) => {
     <>
       <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
         <div className="flex-shrink-0">
-          <img className="h-48 w-full object-cover" src={images.thumbnail} alt="" />
+          <LazyLoadImage
+            src={images.thumbnail}
+            className="h-48 w-full object-cover"
+            alt="Article thumbnail"
+            effect="blur"
+          />
         </div>
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
           <div className="flex-1">
@@ -52,7 +59,12 @@ const Blog = ({blog}) => {
               <div className="flex-shrink-0">
                 <div>
                   <span className="sr-only">{author.name}</span>
-                  <img className="h-10 w-10 rounded-full" src={author.profile_img} alt="" />
+                  <LazyLoadImage
+                    src={author.profile_img}
+                    className="h-10 w-10 rounded-full"
+                    alt="Auther Profile"
+                    effect="blur"
+                  />
                 </div>
               </div>
               <div className="ml-3">

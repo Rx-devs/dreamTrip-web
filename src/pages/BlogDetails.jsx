@@ -3,7 +3,7 @@ import {
   useQueryClient
 } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import {Preloader2} from '../components/Preloader';
+import Preloader from '../components/Preloader';
 import {useBlogData} from '../hooks/useBlogData';
 import Rating from '@mui/material/Rating';
 import { useParams } from "react-router-dom";
@@ -19,7 +19,7 @@ const BlogDetails = () => {
         <div>
             <Layout>
               {
-                isLoading && (<Preloader2/>)
+                isLoading && (<Preloader/>)
               }
 
               {

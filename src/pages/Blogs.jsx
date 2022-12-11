@@ -2,7 +2,7 @@ import {
   useQuery,
   useQueryClient
 } from "@tanstack/react-query";
-import {Preloader2} from '../components/Preloader';
+import Preloader from '../components/Preloader';
 import {useBlogsData} from '../hooks/useBlogsData';
 import Layout from "../layouts/Layout";
 import Blog from '../components/Blog';
@@ -21,7 +21,7 @@ const {isLoading, data, isError, error, isSuccess} = useBlogsData();
           </p>
         </div>
         {
-          isLoading && (<Preloader2/>)
+          isLoading && (<Preloader/>)
         }
         {
 					isSuccess && (

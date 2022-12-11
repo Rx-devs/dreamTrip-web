@@ -1,4 +1,3 @@
-import React from "react";
 import { ParallaxBanner } from 'react-scroll-parallax';
 import bgImg from '../assets/images/banner/bg.jpg';
 import SearchTrip from "./SearchTrip";
