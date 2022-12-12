@@ -1,7 +1,3 @@
-import {
-  useQuery,
-  useQueryClient
-} from "@tanstack/react-query";
 import {useBlogsData} from '../hooks/useBlogsData';
 import Blog from './Blog';
 

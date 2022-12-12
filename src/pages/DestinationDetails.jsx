@@ -1,50 +1,74 @@
 import Layout from "../layouts/Layout";
+import { useParams } from "react-router-dom";
 import {BsCheckCircle} from 'react-icons/bs';
 import {AiOutlineCloseCircle} from 'react-icons/ai';
+import {useDestinationData} from '../hooks/useDestinationData';
+import Preloader from '../components/Preloader';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const DestinationDetails = () => {
-
+  const {destinationId } = useParams();
+  const {isLoading, data, isError, error, isSuccess} = useDestinationData(destinationId);
   const TourInfo = [
     {
       info: 'Destination',
-      value: 'Span'
+      value: `${data?.destination_name}`
     }, {
       info: 'Departure',
-      value: 'Main Square, Old Town'
+      value: `${data?.departure}`
     }, {
       info: 'Departure Time',
-      value: 'Approximately 8.30AM'
+      value: `${data?.departure_time}`
     }, {
       info: 'Return Time',
-      value: 'Approximately 7.30PM'
+      value: `${data?.return_time}`
     }
   ];
-  return (<Layout>
+  const galleryImg = [
+    `${data?.images?.other_imgUrl}`,
+    `${data?.images?.other_imgUrl}`,
+    `${data?.images?.other_imgUrl}`,
+    `${data?.images?.other_imgUrl}`,
+
+  ]
+  return (
+    <Layout>
+      {
+        isLoading && (<Preloader/>)
+      }
+
+      {
+          isSuccess && (
+            <>
     <div style={{
         height: '400px'
       }} className='mb-10 relative'>
       <div className="absolute left-0 bottom-0 w-full h-full z-10" style={{
           backgroundImage: 'linear-gradient(rgb(0 0 0 / 25%), rgb(0 0 0 / 25%))'
         }}></div>
-      <img className='w-full h-full object-cover' src="https://i.ibb.co/3C2JnPn/tom-yum-goong-spicy-shrimp-soup-thai-food-top-12-must-eat-local-dishes-in-thailand.jpg" alt=""/>
+        <LazyLoadImage
+          src={data.images.other_imgUrl}
+          alt={data.images.alt}
+          className='w-full h-full object-cover'
+        />
       <div className='absolute top-2/4 left-1/2 -translate-x-1/2 -translate-y-2/4 z-20 text-white'>
         <span className='block text-3xl text-center typography-caption'>Amazing Tour</span>
-        <h2 className='text-7xl font-semibold'>Spain</h2>
+        <h2 className='text-7xl font-semibold'>{data.location}</h2>
       </div>
     </div>
     <div className='grid grid-cols-[1fr_300px] container mx-auto gap-4'>
       <div className='space-y-10 pb-10'>
         <div className=''>
           <div className='flex items-center gap-3 mb-2'>
-            <h3 className='text-3xl font-medium'>Spain Trip</h3>
+            <h3 className='text-3xl font-medium'>{data?.destination_name} Trip</h3>
             <p>
-              <span>$1500</span>
+              <span>{data.travel_cost}</span>
               / per person</p>
           </div>
-          <div>Rating</div>
+          <div>{data.destination_rating}</div>
         </div>
-        <div className=''>
-          Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.
+        <div>
+          {data.description}
         </div>
         <div>
           <ul className='space-y-6'>
@@ -96,14 +120,7 @@ const DestinationDetails = () => {
             </li>
           </ul>
         </div>
-        <div className='space-y-4'>
-          <h3 className='text-2xl'>Destination Gallery</h3>
-          <div className='grid grid-cols-3 gap-4'>
-            <img src="https://i.ibb.co/3C2JnPn/tom-yum-goong-spicy-shrimp-soup-thai-food-top-12-must-eat-local-dishes-in-thailand.jpg" alt=""/>
-            <img src="https://i.ibb.co/3C2JnPn/tom-yum-goong-spicy-shrimp-soup-thai-food-top-12-must-eat-local-dishes-in-thailand.jpg" alt=""/>
-            <img src="https://i.ibb.co/3C2JnPn/tom-yum-goong-spicy-shrimp-soup-thai-food-top-12-must-eat-local-dishes-in-thailand.jpg" alt=""/>
-          </div>
-        </div>
+
       </div>
       <aside className=''>
         <div className="flex flex-col items-center justify-center bg-gray-100 py-10 px-4">
@@ -145,6 +162,25 @@ const DestinationDetails = () => {
 	</div>
       </aside>
     </div>
-  </Layout>);
+    <div className='space-y-4 container mx-auto'>
+      <h3 className='text-2xl'>Destination Gallery</h3>
+      <div className='grid grid-cols-4 gap-4'>
+        {
+          galleryImg.map((img,index) =>(
+            <LazyLoadImage
+              key={index}
+              src={img}
+              alt={data.images.alt}
+              className="h-48 w-full object-cover rounded"
+              effect="blur"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </>
+)}
+  </Layout>
+);
 };
 export default DestinationDetails;

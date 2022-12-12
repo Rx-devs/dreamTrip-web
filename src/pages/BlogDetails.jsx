@@ -2,7 +2,6 @@ import {
   useQuery,
   useQueryClient
 } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 import Preloader from '../components/Preloader';
 import {useBlogData} from '../hooks/useBlogData';
 import Rating from '@mui/material/Rating';

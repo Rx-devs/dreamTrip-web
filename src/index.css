@@ -206,3 +206,9 @@ input::-ms-input-placeholder { /* Microsoft Edge */
     background-color: red;
     color: #fff;
 }
+
+
+/* destination */
+.lazy-load-image-background{
+  height: 100%;
+}
