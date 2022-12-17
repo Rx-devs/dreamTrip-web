@@ -25,10 +25,10 @@ const CreateBlog = () => {
     };
 
     return (
-        <div className="max-w-2xl mx-auto ">
-            <div className=" mx-6 md:mx-0 bg-white rounded-lg border border-gray-200 shadow-md p-8 lg:p-8">
-                <form style={{ display: 'grid', gridTemplateColumns: '1fr', rowGap: '10px', padding: '10px' }} onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className="text-3xl text-center text-gray-800 ">Create a Blog</h2>
+        <div className="max-w-2xl mx-auto bg-white h-screen">
+            <div className=" mx-6 md:mx-0 rounded-lg border border-gray-200 shadow-md px-8 lg:px-8">
+                <form className="px-8 py-6" style={{ display: 'grid', gridTemplateColumns: '1fr', rowGap: '10px', backgroundColor: 'ddd' }} onSubmit={handleSubmit(onSubmit)}>
+                    <h2 className="text-2xl text-center text-gray-800 ">Create a Blog</h2>
                     <div className="justify-between md:flex gap-4">
                         <div className="w-full">
                             <input className="w-full block px-4 py-3 mt-2 text-gray-700 bg-white border border-gray-500 rounded-md" placeholder="Blog Title" {...register("title", { required: true })} />
@@ -54,16 +54,16 @@ const CreateBlog = () => {
                         </div>
                     </div>
                     <input className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-500 rounded-md" style={{ padding: '12px' }} placeholder="Blog Thumbnail Url" {...register("thumbnail_url", { required: true })} />
-                    <textarea className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-500 rounded-md" style={{ padding: '12px' }} placeholder="Blog Description" {...register("description", { required: true })} />
+                    <textarea className="typography-body text-base resize-none block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-500 rounded-md" style={{ padding: '12px' }} placeholder="Blog Description" {...register("description", { required: true })} />
                     <div className="flex justify-center mt-2">
                         <input className="px-4 py-2 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-900 cursor-pointer" type="submit" />
                     </div>
-                
+
                 </form>
             </div>
-            
+
         </div>
     );
 };
 
-export default CreateBlog ;
+export default CreateBlog;

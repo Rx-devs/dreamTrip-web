@@ -12,7 +12,7 @@ const useFirebase = () => {
     // const [admin, setAdmin] = useState(false);
     const auth = getAuth();
 
-    
+
     // register new user
     const registerUser = (email, password, name, navigate) => {
         setIsLoading(true);
@@ -25,7 +25,7 @@ const useFirebase = () => {
                         // email verification sent
                     });
                 // registration successfull.
-                
+
                 setAuthError('');
                 // change displayName
                 const newUser = { email, displayName: name };
@@ -104,7 +104,7 @@ const useFirebase = () => {
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email]); */
-    
+
     // User Log Out
     const logout = () => {
         setIsLoading(true);
@@ -142,7 +142,7 @@ const useFirebase = () => {
                 // ..
             })
             .finally(() => setIsLoading(false));
-            
+
     };
 
     return {

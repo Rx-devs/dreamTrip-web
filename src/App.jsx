@@ -27,31 +27,31 @@ function App() {
       <ParallaxProvider>
         <AuthProvider>
           <Router>
-            <Suspense fallback={<Preloader/>}>
-            <Routes>
-              <Route path="/" element={<Home></Home>}></Route>
-              <Route path="/home" element={<Home></Home>}></Route>
-              <Route path="/gallery" element={<Gallery />}></Route>
-              <Route path="/blogs" element={<Blogs />}></Route>
-              <Route path="/destinations" element={<Destinations />}></Route>
-              <Route path="/about" element={<About />}></Route>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/blogDetails/:blogId" element={<BlogDetails />}></Route>
-              <Route path="/destinationDetails/:destinationId" element={<DestinationDetails />}></Route>
-              {/* <Route path="/blogDetails/:blogId" element={<PrivateRoute> <BlogDetails /> </PrivateRoute>}></Route> */}
-              <Route path="/dashboard" element={<PrivateRoute>  <Dashboard /> </PrivateRoute>}>
-                <Route path={`/dashboard/addBlog`} element={<AdminRoute> <AddBlog /></AdminRoute>}>
+            <Suspense fallback={<Preloader />}>
+              <Routes>
+                <Route path="/" element={<Home></Home>}></Route>
+                <Route path="/home" element={<Home></Home>}></Route>
+                <Route path="/gallery" element={<Gallery />}></Route>
+                <Route path="/blogs" element={<Blogs />}></Route>
+                <Route path="/destinations" element={<Destinations />}></Route>
+                <Route path="/about" element={<About />}></Route>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/blogDetails/:blogId" element={<BlogDetails />}></Route>
+                <Route path="/destinationDetails/:destinationId" element={<DestinationDetails />}></Route>
+                {/* <Route path="/blogDetails/:blogId" element={<PrivateRoute> <BlogDetails /> </PrivateRoute>}></Route> */}
+                <Route path="/dashboard" element={<PrivateRoute>  <Dashboard /> </PrivateRoute>}>
+                  <Route path={`/dashboard/addBlog`} element={<AdminRoute> <AddBlog /></AdminRoute>}>
+                  </Route>
+                  <Route path={`/dashboard/addAdmin`} element={<AdminRoute> <AddAdmin /> </AdminRoute>}>
+                  </Route>
+                  <Route path={`/dashboard/manageBlogs`} element={<AdminRoute><ManageBlogs /></AdminRoute>}>
+                  </Route>
+                  <Route path={`/dashboard/createBlog`} element={<PrivateRoute><CreateBlog /></PrivateRoute>}>
+                  </Route>
                 </Route>
-                <Route path={`/dashboard/addAdmin`} element={<AdminRoute> <AddAdmin /> </AdminRoute>}>
-                </Route>
-                <Route path={`/dashboard/manageBlogs`} element={<AdminRoute><ManageBlogs /></AdminRoute>}>
-                </Route>
-                <Route path={`/dashboard/createBlog`} element={<PrivateRoute><CreateBlog /></PrivateRoute>}>
-                </Route>
-              </Route>
-            </Routes>
-          </Suspense>
+              </Routes>
+            </Suspense>
           </Router>
         </AuthProvider>
       </ParallaxProvider>

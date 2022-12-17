@@ -4,10 +4,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import useAuth from "../hooks/useAuth";
 
 const ResetPassModal = ({ removeModal }) => {
-  // console.log(props)
   const [userData, setUserData] = useState({});
   const { resetPass } = useAuth();
-  
+
   // handle input fields onBlur
   const handleOnBlur = e => {
     const field = e.target.name;
@@ -22,7 +21,6 @@ const ResetPassModal = ({ removeModal }) => {
     resetPass(userData.email);
 
     e.preventDefault();
-    // console.log(e,userData.email);
   }
 
   const notify = () => toast.success(`We sent an email to reset your password, check your email inbox & spam box too!!`, {

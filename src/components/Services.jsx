@@ -1,10 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import TourImg from '../assets/images/services/tour.png'
-import GlobeImg from '../assets/images/services/around_the_globe.png'
-import BookingImg from '../assets/images/services/booking.png'
+import GlobeImg from '../assets/images/services/around_the_globe.png';
+import BookingImg from '../assets/images/services/booking.png';
+import TourImg from '../assets/images/services/tour.png';
 
-const Services = ({}) => {
+const Services = ({ }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1fr_4fr] gap-10 container mx-auto py-10">
       <div className="space-y-3 px-5 md:pr-4 mx-auto text-center lg:text-left">
@@ -14,9 +13,9 @@ const Services = ({}) => {
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-6">
         {
-          servicesList.map((service,index)=>(
+          servicesList.map((service, index) => (
             <div key={index} className="space-y-3 text-center lg:text-left">
-              <img className="mx-auto lg:mx-0" src={service?.img} alt="Tour Service"/>
+              <img className="mx-auto lg:mx-0" src={service?.img} alt="Tour Service" />
               <h3 className="text-xl font-semibold typography-title">{service.title}</h3>
               <p>{service.subTitle}</p>
             </div>
@@ -28,26 +27,22 @@ const Services = ({}) => {
   );
 }
 
-// Services.propTypes = {
-//   : PropTypes.
-// };
-
 export default Services;
 
 const servicesList = [
   {
-    title:'Lot Of Choices',
-    subTitle:'Total 400+ destinations that we work with.',
+    title: 'Lot Of Choices',
+    subTitle: 'Total 400+ destinations that we work with.',
     img: GlobeImg
   },
   {
-    title:'Best Tour Guide',
-    subTitle:'Our tour guide with 15+ years of experience.',
+    title: 'Best Tour Guide',
+    subTitle: 'Our tour guide with 15+ years of experience.',
     img: TourImg
   },
   {
-    title:'Easy Booking',
-    subTitle:'With an early and fast purchase process.',
+    title: 'Easy Booking',
+    subTitle: 'With an early and fast purchase process.',
     img: BookingImg
   }
 ]

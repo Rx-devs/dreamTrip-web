@@ -8,7 +8,7 @@ const ScrollBtn = () => {
         window.addEventListener('scroll', () => {
             window.scrollY > 300 ? setVisible(true) : setVisible(false);
         });
-        
+
     }, []);
 
     const scrollToTop = () => {
@@ -17,19 +17,16 @@ const ScrollBtn = () => {
             behavior: 'smooth'
         })
     }
-   
-    
+
+
     return (
         <>
             {
                 visible && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-6 rounded-full bg-black right-6 bg- z-50 p-4"
-                    >
-                        {/* <BsArrowUpCircle className='text-white h-5 w-5 mb-2' /> */}
-                        
-                        <BsFillArrowUpCircleFill className='text-white h-5 w-5'/>
+                        className="fixed bottom-6 rounded-full bg-color-main right-6 bg- z-50 p-4">
+                        <BsFillArrowUpCircleFill className='text-white h-5 w-5' />
                     </button>
                 )
             }

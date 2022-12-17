@@ -67,13 +67,14 @@ export default function Navigation() {
                   <Menu as="div" className="ml-3 relative">
                     <div>
                       <Menu.Button className="bg-white rounded-full p-1">
-                        {user.photoURL ? (
+                        {/* {user.photoURL ? (
                           <img
                             className="rounded-full w-7 h-7"
                             src={user.photoURL}
-                            alt=""
+                            alt="profile image"
                           />
-                        ) : <AiOutlineUser className="h-8 w-8 rounded-full p-1 bg-white block" />}
+                        ) : <AiOutlineUser className="h-8 w-8 rounded-full p-1 bg-white block" />} */}
+                        <AiOutlineUser className="h-8 w-8 rounded-full p-1 bg-white block" />
                       </Menu.Button>
                     </div>
                     <Transition
@@ -89,7 +90,7 @@ export default function Navigation() {
                         <Menu.Item>
                           {({ active }) => (
                             <NavLink
-                              className="font-semibold block text-center"
+                              className="block text-center"
                               to="/dashboard">
                               Dashboard
                             </NavLink>
@@ -97,7 +98,7 @@ export default function Navigation() {
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <button className="font-semibold block bg-white p-0" onClick={logout}>Logout</button>
+                            <button className="text-base typography-body block bg-white p-0" onClick={logout}>Logout</button>
                           )}
                         </Menu.Item>
                       </Menu.Items>

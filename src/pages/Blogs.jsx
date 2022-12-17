@@ -1,11 +1,7 @@
-import {
-  useQuery,
-  useQueryClient
-} from "@tanstack/react-query";
-import Preloader from '../components/Preloader';
-import {useBlogsData} from '../hooks/useBlogsData';
-import Layout from "../layouts/Layout";
 import Blog from '../components/Blog';
+import Preloader from '../components/Preloader';
+import { useBlogsData } from '../hooks/useBlogsData';
+import Layout from "../layouts/Layout";
 
 const Blogs = () => {
 const {isLoading, data, isError, error, isSuccess} = useBlogsData();
