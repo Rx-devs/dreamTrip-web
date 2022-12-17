@@ -1,6 +1,6 @@
-import { FaLinkedinIn, FaTwitter, FaFacebook, FaInstagram, FaDiscord } from 'react-icons/fa';
+import { FaDiscord, FaFacebook, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
-import { MdLocationOn,MdCall } from 'react-icons/md';
+import { MdCall, MdLocationOn } from 'react-icons/md';
 
 const allInfo = [
   {
@@ -19,10 +19,10 @@ const allInfo = [
     content: 'Broadway & Morris St, New York.'
   }
 ]
-function TopInfobar(){
+export default function TopInfobar(){
   return(
-    <div className='container-fluid px-2 sm:px-6 lg:px-8 mx-auto bg-black py-3'>
-      <div className='grid grid-cols-2 text-white'>
+    <div className='container-fluid hidden md:block px-2 sm:px-6 lg:px-8 mx-auto bg-black py-3'>
+      <div className='grid grid-cols-[4fr_1fr] text-white'>
         <div className='flex gap-5 items-center text-sm'>
           {
             allInfo.map(info => (
@@ -41,4 +41,4 @@ function TopInfobar(){
     </div>
   )
 };
-export default TopInfobar;
+

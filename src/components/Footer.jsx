@@ -1,7 +1,7 @@
 import { FaFacebookSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
 
 const Footer = () => {
-  return(
+  return (
     <footer aria-label="Site Footer">
       <div
         className="max-w-screen-xl px-4 py-8 mx-auto space-y-2 sm:px-6 lg:px-8">
@@ -21,7 +21,7 @@ const Footer = () => {
                   target="_blank"
                   className="text-gray-500 transition hover:opacity-75">
                   <span className="sr-only">Facebook</span>
-                  <FaFacebookSquare  className="w-6 h-6"/>
+                  <FaFacebookSquare className="w-6 h-6" />
                 </a>
               </li>
               <li>
@@ -32,7 +32,7 @@ const Footer = () => {
                   className="text-gray-500 transition hover:opacity-75"
                 >
                   <span className="sr-only">Twitter</span>
-                  <FaTwitterSquare  className="w-6 h-6"/>
+                  <FaTwitterSquare className="w-6 h-6" />
                 </a>
               </li>
               <li>
@@ -43,7 +43,7 @@ const Footer = () => {
                   className="text-gray-500 transition hover:opacity-75"
                 >
                   <span className="sr-only">LinkedIn</span>
-                  <FaLinkedin className="w-6 h-6"/>
+                  <FaLinkedin className="w-6 h-6" />
                 </a>
               </li>
             </ul>
@@ -171,8 +171,8 @@ const Footer = () => {
         </div>
 
         <p className="text-base text-gray-500 text-center">
-            &copy; 2022 DreamTrip, Inc. All rights reserved.
-          </p>
+          &copy; 2022 DreamTrip, Inc. All rights reserved.
+        </p>
       </div>
     </footer>
 
