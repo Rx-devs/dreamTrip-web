@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer aria-label="Site Footer">
       <div
-        className="max-w-screen-xl px-4 py-8 mx-auto space-y-2 sm:px-6 lg:px-8">
+        className="container-fluid mx-auto px-4 py-8 mx-auto space-y-2 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 mb-4">
           <div>
             <div className="text-xl font-semibold">

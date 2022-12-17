@@ -9,16 +9,16 @@ const Blog = ({ blog }) => {
   const { blog_id, images, title, sub_title, author, published_at, reading_time } = blog;
   return (
     <>
-      <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-        <div className="flex-shrink-0">
+      <div className="flex flex-col rounded-lg shadow-lg overflow-hidden w-full h-full">
+        <div className="flex-shrink-0 w-full">
           <LazyLoadImage
             src={images.thumbnail}
-            className="h-48 w-full object-cover"
+            className="object-cover"
             alt="Article thumbnail"
             effect="blur"
           />
         </div>
-        <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+        <div className="flex-1 bg-white px-6 py-5 flex flex-col justify-between">
           <div className="flex-1">
             <div className="flex items-center justify-between pb-2 overflow-hidden">
               <p className="text-sm font-medium color-main">

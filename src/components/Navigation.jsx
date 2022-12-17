@@ -23,7 +23,7 @@ export default function Navigation() {
     <Disclosure as="nav" className="nav-styles shadow-sm">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto md:px-6 lg:px-8 py-1 shadow-lg">
+          <div className="container-fluid mx-auto md:px-6 lg:px-8 py-1 shadow-lg">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute ml-2 inset-y-0 left-0 flex items-center block md:hidden">
                 {/* Mobile menu button*/}

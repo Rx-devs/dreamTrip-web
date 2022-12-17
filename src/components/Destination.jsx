@@ -23,7 +23,7 @@ const Destination = ({ destination }) => {
 					<div className="transition ease-in-out delay-100 hover:scale-125 duration-700 z-10 w-full h-full">
 						<LazyLoadImage
 							src={images.thumbnail_url}
-							className="object-cover w-full h-full"
+							className="object-cover h-auto lg:h-full 2xl:h-auto"
 							alt="Destination thumbnail"
 							effect="blur"
 						/>

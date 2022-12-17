@@ -5,6 +5,8 @@ import initializeFirebase from "../features/FirebaseAuth/Firebase.init";
 // initialize firebase app
 initializeFirebase();
 
+const apiURL = (import.meta.env.VITE_SERVER_URL) ? import.meta.env.VITE_SERVER_URL : 'https://dream-trip-api.cyclic.app';
+
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [authError, setAuthError] = useState('');
@@ -118,7 +120,7 @@ const useFirebase = () => {
     // send user data to database
     const saveUserToDB = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch(`${import.meta.env.VITE_SERVER_URL}/api/users`, {
+        fetch(`${apiURL}/api/users`, {
             method: method,
             headers: {
                 'content-type': 'application/json'

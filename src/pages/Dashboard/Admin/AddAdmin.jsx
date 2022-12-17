@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const apiURL = (import.meta.env.VITE_SERVER_URL) ? import.meta.env.VITE_SERVER_URL : 'https://dream-trip-api.cyclic.app';
+
 const AddAdmin = () => {
     let navigate = useNavigate();
     const [email, setEmail] = useState('');
@@ -11,7 +13,7 @@ const AddAdmin = () => {
     }
     const handleAdminSubmit = (e) => {
         const user = { email }
-        fetch(`${import.meta.env.VITE_SERVER_URL}/api/users/admin`, {
+        fetch(`${apiURL}/api/users/admin`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
