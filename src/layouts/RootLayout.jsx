@@ -1,12 +1,12 @@
 import { ParallaxProvider } from "react-scroll-parallax";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
-import TopInfobar from "../components/TopInfobar";
+import Infobar from "../components/header/Infobar";
 
 export default function RootLayout({ children }) {
   return (
     <>
-      <TopInfobar />
+      <Infobar />
       <Navigation />
       <ParallaxProvider>
         <main>{children}</main>
