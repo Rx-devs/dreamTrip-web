@@ -7,6 +7,7 @@ import App from "./App";
 import AuthProvider from "./context/AuthProvider";
 import "./index.css";
 import RootLayout from "./layouts/RootLayout";
+import ThemeProvider from "./providers/ThemeProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,9 +26,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <Router>
-          <RootLayout>
-            <App />
-          </RootLayout>
+          <ThemeProvider>
+            <RootLayout>
+              <App />
+            </RootLayout>
+          </ThemeProvider>
         </Router>
       </AuthProvider>
       <ReactQueryDevtools initialIsOpen={false} />

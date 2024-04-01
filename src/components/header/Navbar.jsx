@@ -3,9 +3,12 @@ import {
   RiDashboardLine,
   RiLogoutBoxLine,
   RiMenu2Line,
+  RiMoonLine,
+  RiSunLine,
 } from "@remixicon/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { ThemeContext } from "../../context";
 import useAuth from "../../hooks/useAuth";
 
 let activeStyle = {
@@ -21,6 +24,7 @@ let activeStyle2 = {
 export default function Navbar() {
   const [showNavLinks, setShowNavLinks] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const { theme, changeTheme } = useContext(ThemeContext);
 
   const { user, logout } = useAuth();
   return (
@@ -41,18 +45,14 @@ export default function Navbar() {
             {!showNavLinks ? (
               <RiMenu2Line size={22} color="#3fd0d4" />
             ) : (
-              <RiCloseLine
-                size={22}
-                color="#3fd0d4"
-                className="bg-neutral-900"
-              />
+              <RiCloseLine size={22} color="#3fd0d4" />
             )}
           </div>
           {/* nav links for small screen */}
           {showNavLinks && (
             <ul
               tabIndex={1}
-              className="menu menu-sm gap-1 dropdown-content mt-2 z-[1] p-2 shadow bg-base-100 rounded-b-lg w-screen scale-0 lg:hidden "
+              className="menu menu-sm gap-1 dropdown-content mt-2 z-[1] p-2 shadow bg-base-100 rounded-b-lg w-screen scale-0 lg:hidden"
             >
               {navItems.map((item) => (
                 <li key={item.name}>
@@ -106,6 +106,25 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end md:me-8">
+        {/* theme switching */}
+        <div className="flex">
+          <label className="swap swap-rotate">
+            {/* this hidden checkbox controls the state */}
+            <input
+              type="checkbox"
+              className="theme-controller"
+              value={theme}
+              onChange={changeTheme}
+            />
+            {theme === "light" ? (
+              // sun icon
+              <RiSunLine size={24} />
+            ) : (
+              // moon icon
+              <RiMoonLine size={24} />
+            )}
+          </label>
+        </div>
         {/*  profile dropdown */}
         {user.email ? (
           <div className="dropdown dropdown-end cursor-pointer">

@@ -192,13 +192,6 @@ input::-ms-input-placeholder {
   background-color: var(--dark);
 }
 
-/*Navigation bar*/
-.nav-styles {
-  /* background-color: var(--main) */
-  /* background-color: rgba(100%, 100%, 100%, 5%); */
-  /* backdrop-filter: blur(50px); */
-}
-
 /*place*/
 .place-content {
   position: absolute;

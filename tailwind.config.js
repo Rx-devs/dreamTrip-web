@@ -4,8 +4,12 @@ export default {
   theme: {
     extend: {},
   },
+  darkMode: ["class", '[data-mode="dark"]'],
   plugins: [require("daisyui")],
   corePlugins: {
     preflight: false,
+  },
+  daisyui: {
+    themes: ["light", "dark"],
   },
 };
