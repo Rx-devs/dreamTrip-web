@@ -161,10 +161,11 @@ input::-ms-input-placeholder {
 }
 
 /* customized styles for daisyUI */
-/* .dropdown:is(:not(details)) .dropdown-content {
+.dropdown:is(:not(details)) .dropdown-content {
   opacity: 1;
   visibility: visible;
-} */
+  transform: translate(0, 0);
+}
 .menu li > *:not(ul, .menu-title, details, .btn):active {
   background-color: #64c2c7;
   color: white;
