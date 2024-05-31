@@ -1,12 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
+import { serverBaseURL } from "../../utility/getURL";
 
-const apiURL = (import.meta.env.VITE_SERVER_URL) ? import.meta.env.VITE_SERVER_URL : 'https://dream-trip-api.cyclic.app';
-
-export const fetchBlogs =  async () => {
+export const fetchBlogs = async () => {
   // console.log('fetchBlogs..');
-  const res = await axios.get(`${apiURL}/api/blogs`);
+  const res = await axios.get(`${serverBaseURL}/api/blogs`);
   const blogs = res.data;
 
   // console.log('Blogs', blogs);
   return blogs;
-}
+};

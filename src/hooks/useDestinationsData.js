@@ -1,15 +1,12 @@
-import {
-  useQuery
-} from "@tanstack/react-query";
-import axios from 'axios';
-
-const apiURL = (import.meta.env.VITE_SERVER_URL) ? import.meta.env.VITE_SERVER_URL : 'https://dream-trip-api.cyclic.app';
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { serverBaseURL } from "../utility/getURL";
 
 const fetchDestinations = async () => {
-  const res = await axios.get(`${apiURL}/api/destinations`);
+  const res = await axios.get(`${serverBaseURL}/api/destinations`);
   return res.data;
-}
+};
 
 export const useDestinationsData = () => {
-  return useQuery(['destinations'], () => fetchDestinations());
-}
+  return useQuery(["destinations"], () => fetchDestinations());
+};
